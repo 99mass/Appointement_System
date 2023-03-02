@@ -1,0 +1,128 @@
+ /* google fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Gwendolyn:wght@700&family=Sassy+Frass&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'poppins';
+}
+body{
+    overflow-x: hidden;
+}
+.main .section{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 5.9rem;
+    padding-top: 2rem;
+}
+.main .section .grid-max{
+    justify-content: space-evenly;
+}
+.main .section .grid-max #section-child1,
+.main .section .grid-max #section-child2{
+    height: auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.main .section .grid-max #section-child1{
+    width: 65%;
+    margin:0% 0% 0% 5%;
+}
+.main .section .grid-max #section-child2{
+    width: 75%;
+    margin: 2% 0% 0% 20%;
+}
+
+.main .section .grid-max #section-child1 h3,
+.main .section .grid-max #section-child2 h3{
+    background-color: gainsboro;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+}
+.main .section .grid-max #section-child1 .conten-rv{
+    width: 100%;
+    height: auto;
+}
+
+/* formulair de creation de rendez vous */
+/* #formulair .modal-body,
+#formulair_modification .modal-body 
+#delete_formulair .modal-body   {
+  height: auto;
+} */
+
+#formulair .modal-body .btn-exit,
+#formulair_modification .modal-body .btn-exit,
+#delete_formulair .modal-body .btn-exit{
+  text-align: end;
+}
+ #formulair .modal-body .btn-exit .btn-close,
+  #formulair_modification .modal-body .btn-exit .btn-close,
+  #delete_formulair .modal-body .btn-exit .btn-close{
+  color: white;
+  background-color: white;
+  position: relative;
+  top: -2rem;
+  left: 3rem;
+ }
+#formulair .modal-body .contenu-form .input-form .btn-valider-connexion,
+#formulair_modification .modal-body .contenu-form .input-form .btn-valider-connexion{
+  width: 10rem;
+   padding-bottom: 0.5rem;
+   padding-top: 0.5rem;
+   margin-top: 1rem;
+   font-size: 1.5rem;
+}
+
+#formulair .modal-body .contenu-form .input-form .btn-valider-connexion,
+#formulair_modification .modal-body .contenu-form .input-form .btn-valider-connexion{
+margin-bottom: 1rem;
+}
+#formulair .modal-body .body-form .div-multi-forms,
+#formulair_modification .modal-body .body-form .div-multi-forms{
+    width: 100%;
+    display: block;
+    text-align: left;
+    margin: 2rem 0rem 2rem 4rem;
+}
+#formulair .modal-body .body-form .div-multi-forms .conten-form-check,
+#formulair_modification .modal-body .body-form .div-multi-forms .conten-form-check{
+     margin-left: 2rem;
+}
+#formulair .modal-body .body-form .div-multi-forms h5 i,
+#formulair_modification .modal-body .body-form .div-multi-forms h5 i{
+    color:blue;
+    margin-right:  0.5rem;
+
+}
+#formulair .modal-body .body-form .div-multi-forms .form_1,
+#formulair .modal-body .body-form .div-multi-forms .form_2,
+#formulair_modification .modal-body .body-form .div-multi-forms .form_1,
+#formulair_modification .modal-body .body-form .div-multi-forms .form_2{
+     border-left: 3px solid blue;
+     padding-left: 1rem;
+     margin-bottom: 2rem;
+}
+
+#formulair .modal-body .body-form .div-multi-forms .form_2 .input-group,
+#formulair .modal-body .body-form .div-multi-forms .conten-form-check .input-group,
+#formulair_modification .modal-body .body-form .div-multi-forms .form_2 .input-group,
+#formulair_modification .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
+    width: 35%;
+}
+#formulair .modal-body .body-form .div-multi-forms .form_1 #btn-form_1,
+#formulair_modification .modal-body .body-form .div-multi-forms .form_1 #btn-form_1{
+    margin: 1.5rem 0rem 0rem 2rem;
+    /* padding: 0.5rem 3rem; */
+    font-size: 1rem;
+}
+.main .section .grid-max #section-child1 .conten-rv #list_group {
+   display: flex;
+}
+.main .section .grid-max #section-child1 .conten-rv #list_group li {
+    display: flex;
+    justify-content: space-around;
+}
+.main .section .grid-max #section-child1 .conten-rv #list_group .thead_liste{
+    font-size: 1.2rem;
+}

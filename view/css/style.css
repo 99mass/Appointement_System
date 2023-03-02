@@ -1,0 +1,128 @@
+ 
+ /* google fonts */
+
+  @import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Gwendolyn:wght@700&family=Sassy+Frass&display=swap');
+
+ *{
+    margin:0px;
+    padding: 0px;
+    font-family: 'poppins';
+ }
+ body{
+    overflow-x: hidden;
+ }
+
+/* cors de la page */
+#div_image_bannier{
+    position: relative;
+    top: 1rem;
+    z-index: -1;
+}
+.main .petite_annoc{
+    color: darkblue;
+    font-size: 1.5rem;
+    width: max-content;
+    text-align: center;
+    position: relative;
+    left: 45rem;
+    top: -35rem;
+    z-index: 1;
+}
+.main .petite_annoc div{
+    font-size: 1rem;
+}
+.main .petite_annoc button{
+    font-size: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+}
+.main .section_texte{
+    width: auto;
+    margin-top: -7rem; 
+    margin-bottom: 3rem; 
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+.main .section_texte h4{
+    text-align: center;
+}
+.main .section_texte p span{
+  font-weight: bold;
+}
+.main .partenaire{
+   box-shadow: 0.5rem 0.5rem 0.5rem 0.2rem gray;
+   border-radius: 2rem;
+}
+/* modal inscription */
+#staticBackdrop,#staticBackdrop2{
+  margin-top: 4rem;
+ 
+}
+#staticBackdrop .modal-body,
+#staticBackdrop2 .modal-body  {
+  height: 40rem;
+}
+#staticBackdrop .modal-body .btn-exit,
+#staticBackdrop2 .modal-body .btn-exit{
+  text-align: end;
+}
+ #staticBackdrop .modal-body .btn-exit .btn-close,
+ #staticBackdrop2 .modal-body .btn-exit .btn-close{
+  color: white;
+  background-color: white;
+  position: relative;
+  top: -2rem;
+  left: 3rem;
+ }
+#staticBackdrop .modal-body .body-form,
+#staticBackdrop2 .modal-body .body-form{
+  display: flex;
+}
+#staticBackdrop .modal-body .contenu-form,
+#staticBackdrop2 .modal-body .contenu-form{
+  width: 49%;
+  height: 37.2rem;
+}
+#staticBackdrop .modal-body .image-form,
+#staticBackdrop2 .modal-body .image-form{
+  background-image: url('../image/signup-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 51%;
+  height: 40.2rem;
+  position: relative;
+  top: -2.8rem;
+  left: 1em;
+  display: block;
+}
+#staticBackdrop .modal-body .image-form h1,
+#staticBackdrop2 .modal-body .image-form h1{
+  width: 95%;
+  margin: 0.5rem;
+  margin-top: 50%;
+  text-align: center;
+  color: white;
+}
+#staticBackdrop .modal-body .contenu-form .input-form,
+#staticBackdrop2 .modal-body .contenu-form .input-form{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+#staticBackdrop .modal-body .contenu-form .input-form .form-floating,
+#staticBackdrop2 .modal-body .contenu-form .input-form .form-floating{
+  margin-bottom: 0.5rem;
+}
+#staticBackdrop .modal-body .contenu-form .input-form .btn-valider-inscription,
+#staticBackdrop2 .modal-body .contenu-form .input-form .btn-valider-connexion{
+  width: 10rem;
+   padding-bottom: 0.5rem;
+   padding-top: 0.5rem;
+   margin-top: 1rem;
+   font-size: 1.5rem;
+}
+
+#staticBackdrop2 .modal-body .contenu-form .input-form .btn-valider-connexion{
+margin-bottom: 1rem;
+}
+
