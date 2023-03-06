@@ -156,7 +156,7 @@
                     <div class="btn-exit"><button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button></div>
                        <div class="alert alert-danger" role="alert">
                         êtes vous sûre de vouloir supprimer cet rendez vous ? <br>
-                        une fois supprimer on peut plus la . <br>
+                        une fois supprimer on peut plus la récupérer. <br>
                           <button type="button" class="btn btn-secondary text-black mt-3 me-1" >Non</button>
                           <button type="button" class="btn btn-danger text-white mt-3 me-1" >Oui</button>
                                             
@@ -166,3 +166,7 @@
                                         
         </div>
     </div>
+
+
+
+<!-- debut formulaire de récuperation de mot de passe -->

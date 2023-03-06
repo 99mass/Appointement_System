@@ -55,20 +55,23 @@
    border-radius: 2rem;
 }
 /* modal inscription */
-#staticBackdrop,#staticBackdrop2{
+#staticBackdrop,#staticBackdrop2,#staticBackdrop3{
   margin-top: 4rem;
  
 }
 #staticBackdrop .modal-body,
-#staticBackdrop2 .modal-body  {
+#staticBackdrop2 .modal-body,
+#staticBackdrop3 .modal-body{
   height: 40rem;
 }
 #staticBackdrop .modal-body .btn-exit,
-#staticBackdrop2 .modal-body .btn-exit{
+#staticBackdrop2 .modal-body .btn-exit,
+#staticBackdrop3 .modal-body .btn-exit{
   text-align: end;
 }
  #staticBackdrop .modal-body .btn-exit .btn-close,
- #staticBackdrop2 .modal-body .btn-exit .btn-close{
+ #staticBackdrop2 .modal-body .btn-exit .btn-close,
+  #staticBackdrop3 .modal-body .btn-exit .btn-close{
   color: white;
   background-color: white;
   position: relative;
@@ -76,16 +79,19 @@
   left: 3rem;
  }
 #staticBackdrop .modal-body .body-form,
-#staticBackdrop2 .modal-body .body-form{
+#staticBackdrop2 .modal-body .body-form,
+#staticBackdrop3 .modal-body .body-form{
   display: flex;
 }
 #staticBackdrop .modal-body .contenu-form,
-#staticBackdrop2 .modal-body .contenu-form{
+#staticBackdrop2 .modal-body .contenu-form,
+#staticBackdrop3 .modal-body .contenu-form{
   width: 49%;
   height: 37.2rem;
 }
 #staticBackdrop .modal-body .image-form,
-#staticBackdrop2 .modal-body .image-form{
+#staticBackdrop2 .modal-body .image-form,
+#staticBackdrop3 .modal-body .image-form{
   background-image: url('../image/signup-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -97,7 +103,8 @@
   display: block;
 }
 #staticBackdrop .modal-body .image-form h1,
-#staticBackdrop2 .modal-body .image-form h1{
+#staticBackdrop2 .modal-body .image-form h1,
+#staticBackdrop3 .modal-body .image-form h1{
   width: 95%;
   margin: 0.5rem;
   margin-top: 50%;
@@ -105,16 +112,19 @@
   color: white;
 }
 #staticBackdrop .modal-body .contenu-form .input-form,
-#staticBackdrop2 .modal-body .contenu-form .input-form{
+#staticBackdrop2 .modal-body .contenu-form .input-form,
+#staticBackdrop3 .modal-body .contenu-form .input-form{
   margin-left: 2rem;
   margin-right: 2rem;
 }
 #staticBackdrop .modal-body .contenu-form .input-form .form-floating,
-#staticBackdrop2 .modal-body .contenu-form .input-form .form-floating{
+#staticBackdrop2 .modal-body .contenu-form .input-form .form-floating,
+#staticBackdrop3 .modal-body .contenu-form .input-form .form-floating{
   margin-bottom: 0.5rem;
 }
 #staticBackdrop .modal-body .contenu-form .input-form .btn-valider-inscription,
-#staticBackdrop2 .modal-body .contenu-form .input-form .btn-valider-connexion{
+#staticBackdrop2 .modal-body .contenu-form .input-form .btn-valider-connexion,
+#staticBackdrop3 .modal-body .contenu-form .input-form .btn-valider-connexion{
   width: 10rem;
    padding-bottom: 0.5rem;
    padding-top: 0.5rem;
@@ -122,7 +132,8 @@
    font-size: 1.5rem;
 }
 
-#staticBackdrop2 .modal-body .contenu-form .input-form .btn-valider-connexion{
+#staticBackdrop2 .modal-body .contenu-form .input-form .btn-valider-connexion,
+#staticBackdrop3 .modal-body .contenu-form .input-form .btn-valider-connexion{
 margin-bottom: 1rem;
 }
 

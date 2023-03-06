@@ -1,3 +1,9 @@
+
+<?php @session_start();
+    if(empty($_SESSION['user']))
+      header("Location: ../view/index.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +27,7 @@
                         <div class="conten-rv">
                                 <p>cliquez sur 
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair">Nouveau RV</button>
-                                  pour crèer un rendez vous. 
+                                  pour crèer un rendez vous. <?= $_SESSION['user']["id"]; ?>
                                 </p>
                                <?php require_once ("../view/include/forms.php") ?>
                                 <!-- debut listes rendez vous creer -->

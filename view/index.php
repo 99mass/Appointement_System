@@ -1,30 +1,33 @@
+<?php @session_start(); //on démare la session  ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/style.css">
+    <link rel="stylesheet" href="../view/css/styles.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/link.php") ?>
     <title>Appointment-System</title>
 </head>
 <body>
    <div class="main">
-     <!--Debut header -->
+     <!--Debut header  -->
       <?php require_once("../view/include/header.php") ?>
-
+       
 
         <!-- corps de la page -->
       <!-- image de fond -->
       <div class="card mb-3 " id="div_image_bannier">
         <img src="../view/image/backgroung.jpg" alt="backgroud" >
       </div>
+      
       <div id="petite_annoc" class="petite_annoc">
         Bienvenu dans Appointment system <br> votre platforme de gestion de rendez vous rapide et securiser
        <div>c'est votre première fois ici ? <br>cliquez sur le bouton s'inscrire</div> 
-           <button type="button" id="but" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button>
+           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button>
       </div>
+            
     <div class="container section_texte">
         <h4>C'est Quoi Appointment System ?</h4>
         <p>
@@ -67,6 +70,42 @@
           </div>
      </div>
 
+<!-- Debut Modal Button Connexion -->
+<div  class="modal fade  " id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="btn-exit"><button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="body-form">
+        <div class="contenu-form">
+            <h4  id="staticBackdropLabel">Bienvenue sur Appointment system ! Veuillez vous connecter </h4>
+            <p> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></p>
+            <form action="../model/connexion.php"  method="post"  class="input-form">
+                <div class="form-floating">
+                    <input type="text" name="login" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email ou Nom Entreprise ou nom utilisateur</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Mot de passe</label>
+                </div>
+                <!-- <button type="button" id="but" class="btn btn-success btn-valider-connexion">Se connecter</button> -->
+                <button type="submit"   id="but" class="btn btn-success btn-valider-connexion">Se connecter</button>
+                <div><a  href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">mot de passe oublié ?</a></div>
+            </form>
+        </div>
+        <div class="image-form">
+            <h1>Avec Appointment system <br>finit les problémes de gestions de rendez vous </h1>
+        </div>
+     </div> 
+    </div>
+    
+    </div>
+  </div>
+</div>
+<!-- Fin Modal Button Connexion -->     
+
+
 <!-- Debut Modal Button Inscription -->
 <div  class="modal fade  " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -76,36 +115,33 @@
       <div class="body-form">
         <div class="contenu-form">
             <h4  id="staticBackdropLabel">Inscrivez-vous <br> gratuitement sur Appointment system</h4>
-            <p> <a href=""> Vous avez déjà un compte ? Connectez-vous </a></p>
+            <p> <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Vous avez déjà un compte ? Connectez-vous </a></p>
 
-            <form action="">
+          <form action="../model/inscription.php"  method="post" >
             <div class="input-form">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Global Adventure code">
+                    <input type="text" name="nom_entrep_utilisateur" class="form-control" id="floatingInput" placeholder="Global Adventure code">
                     <label for="floatingInput">Nom de l'entreprise ou nom utilisateur</label>
                 </div>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Global Adventure code">
-                    <label for="floatingInput">Pays</label>
-                </div>
-                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <div class="form-floating">
+                    <input type="text" name="domaine" class="form-control" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Domaine de travail</label>
                 </div>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
-                </div>
-                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Numero Téléphone</label>
+                    <select name="pays" id="floatingInput" class="p-2 py-3" style="width: 100%;">
+                      <?php require_once("../view/include/select_pays.php") ?>
+                    </select>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="email" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Mot de passe</label>
                 </div>
-                <!-- <button type="button"  id="but" class="btn btn-success btn-valider-inscription">S'inscrire</button> -->
-                <a type="button"  href="../view/page_definition_rv.php" id="but" class="btn btn-success btn-valider-inscription">S'inscrire</a>
+                <button type="submit"  id="but" class="btn btn-success btn-valider-inscription">S'inscrire</button>
+                <!-- <a type="button"   href="../view/page_definition_rv.php" id="but" class="btn btn-success btn-valider-inscription">S'inscrire</a> -->
             </div>
           </form>
         </div>
@@ -120,29 +156,23 @@
 </div>
 <!-- Fin Modal Button Inscription -->
 
-<!-- Debut Modal Button Connexion -->
-<div  class="modal fade  " id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Debut Formulaire de récupération de mot de passe -->
+<div  class="modal fade  " id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-body">
         <div class="btn-exit"><button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button></div>
       <div class="body-form">
         <div class="contenu-form">
-            <h4  id="staticBackdropLabel">Bienvenue sur Appointment system ! Veuillez vous connecter </h4>
-            <p> Nouveau sur Appointment System ?<a href=""> Créez un compte</a></p>
-            <div class="input-form">
+            <h4  id="staticBackdropLabel">Bienvenue sur Appointment system ! Veuillez indiquer votre address E-mail pour récupérer votre mot de passe. </h4>
+            <p> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></p>
+            <form action="../model/get_password.php"  method="post"  class="input-form">
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Email ou Nom Entreprise ou nom utilisateur</label>
                 </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Mot de passe</label>
-                </div>
-                <!-- <button type="button" id="but" class="btn btn-success btn-valider-connexion">Se connecter</button> -->
-                <a type="button" href="../view/page_definition_rv.php"  id="but" class="btn btn-success btn-valider-connexion">Se connecter</a>
-                <div><a href="">mot de passe oublié ?</a></div>
-            </div>
+                <button type="submit"   id="but" class="btn btn-success btn-valider-connexion">Se connecter</button>
+            </form>
         </div>
         <div class="image-form">
             <h1>Avec Appointment system <br>finit les problémes de gestions de rendez vous </h1>
@@ -153,9 +183,8 @@
     </div>
   </div>
 </div>
-<!-- Fin Modal Button Connexion -->
+<!-- Formulaire de récupération de mo de passe --> 
 
-   <!-- fin de la page -->
 
 
     <!-- footer -->
@@ -164,21 +193,11 @@
   </div>
 
     <!-- include js personnel -->
-    <script src="../view/js/index.js"></script>
+    <script src="/view/js/index.js"></script>
     <!-- Include Cdn js -->
     <?php require_once ("../view/include/linkScript.php") ?>
+
   </body>
 </html>
-
-
-
-
-
-
-<!-- <script>$(document).ready(function(){
-    //Anime plusieurs propriétés en même temps
-    $("button").click(function(){
-        $("p").css( "background-color","red" );
-        });
-    });
-</script> -->
+<?php 
+?>
