@@ -7,63 +7,66 @@
                             <div class="body-form">
                                 <h4  id="staticBackdropLabel">Veillez cocher tout les informations que le demadeur doit reiseigner pour cette rendez vous.  </h4>
                                 <div class="div-multi-forms">
-                                    <form method=""  class="form_1">
+                                    <form action="../model/creat_rv.php" method="post" >
+                                        <div  class="form_1">
                                         <h5><i class="fa-solid fa-list-check"></i>informations Personnelles</h5>
                                         <div class="conten-form-check">
+                                              <!-- <input type="hidden" name="id_rv" value="< ?= $_SESSION['user']['id'] ?>"> -->
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault"> Prènom </label>
+                                                    <input class="form-check-input" type="checkbox" name="prenoms" value="1" id="flexCheckChecked" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked"> Prènom </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                                    <input class="form-check-input" type="checkbox" name="nom" value="1" id="flexCheckChecked" checked>
                                                     <label class="form-check-label" for="flexCheckChecked"> Nom </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                                    <input class="form-check-input" type="checkbox" name="dateNaissance" value="1" id="flexCheckChecked" checked >
                                                     <label class="form-check-label" for="flexCheckChecked"> Date de Naissance </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                                    <input class="form-check-input" type="checkbox" name="lieuNaissance" value="1" id="flexCheckChecked" checked>
                                                     <label class="form-check-label" for="flexCheckChecked">Lieu Date de Naissance </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                                    <input class="form-check-input" type="checkbox" name="mail" value="1" id="flexCheckChecked" checked>
                                                     <label class="form-check-label" for="flexCheckChecked"> Address Email </label>
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <span class="input-group-text " id="basic-addon1">Autre Info</span>
-                                                    <input type="text" class="form-control" placeholder="info ici..." aria-label="info" aria-describedby="basic-addon1">
+                                                    <input type="text" name="autreInfos" class="form-control" placeholder="info ici..." aria-label="info" aria-describedby="basic-addon1">
                                                 </div>
                                                 <div class="input-group ">
                                                     <span class="input-group-text" id="basic-addon1">Heure convocation</span>
-                                                    <input type="time" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="time" name="heurConvocation" class="form-control"  aria-describedby="basic-addon1">
                                                  </div>
 
                                         </div>
-                                        <button type="button" id="btn-form_1" class="btn btn-success btn-valider-connexion">Valider</button>
-                                    </form>
-                                    <form class="form_2">
+                                    </div>
+                                        <!-- <button type="submit" id="btn-form_1" class="btn btn-success btn-valider-connexion">Valider</button>
+                                    </form> -->
+                                    <div  class="form_2">
                                         <h5><i class="fa-solid fa-clock"></i>informations Rendez Vous</h5>
                                             <div class="conten-form-check">
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">Date début</span>
-                                                    <input type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="date" name="dateDebut" class="form-control" aria-describedby="basic-addon1">
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">Date Expiration</span>
-                                                    <input type="date" class="form-control"aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="date" name="dateExpiration" class="form-control" aria-describedby="basic-addon1">
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">Lieu</span>
-                                                    <input type="text" class="form-control" placeholder="ex: Dakar/Médina" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="text" name="lieuRV" class="form-control" placeholder="ex: Dakar/Médina"  aria-describedby="basic-addon1">
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">Total Personnes</span>
-                                                    <input type="number" class="form-control" placeholder="ex: 120" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <input type="number" name="totalPersonne" class="form-control" placeholder="ex: 120"  aria-describedby="basic-addon1">
                                                 </div>
-                                                <button type="button" id="btn-form_1" class="btn btn-success btn-valider-connexion">Valider</button>
+                                                <button type="submit" id="btn-form_1" class="btn btn-success btn-valider-connexion">Valider</button>
                                             </div>
-                                        </form>
+                                        </div>
                                 </div>
                             </div> 
                         </div>

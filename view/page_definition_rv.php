@@ -27,32 +27,21 @@
                         <div class="conten-rv">
                                 <p>cliquez sur 
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair">Nouveau RV</button>
-                                  pour crèer un rendez vous. <?= $_SESSION['user']["id"]; ?>
+                                  pour crèer un rendez vous.
                                 </p>
                                <?php require_once ("../view/include/forms.php") ?>
                                 <!-- debut listes rendez vous creer -->
                                 <table class="table table-hover">
-                                    <th>#</th><th>Date-Debut</th><th>Date-Exp</th><th>Lieu</th><th>Total place</th><th>Place prises</th><th>Place restantes</th> <th colspan="3">Action</th>
-                                   
-                                   <tr> 
-                                        <td>1</td><td>13-02-2023</td><td>13-04-2023</td><td>dakar</td><td>300</td><td>200</td><td>100</td> 
-                                        <td colspan="3" style="display: flex;">
-                                            <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#formulair_modification" ><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-danger me-1 " data-bs-toggle="modal" data-bs-target="#delete_formulair"><i class="fa-solid fa-trash"></i></button>
-                                            <button type="button" class="btn btn-success">voir liste</button>
-                                        </td>  
-                                    </tr>
+                                    <th>#</th>
+                                    <th>Date-Debut</th><th>Date-Exp</th><th>Lieu</th><th>Total place</th><th>Place prises</th><th>Place restantes</th> <th colspan="3">Action</th>
+                                
+                                <?php  require_once "../model/read_rv.php";
+                                    if (count($liste_rv)>0) { 
+                                        $numero=1;
+                                        foreach ($liste_rv as $value) {      
+                                ?>
                                     <tr> 
-                                        <td>2</td><td>13-07-2022</td><td>30-07-2022</td><td>pikine</td><td>100</td><td>30</td><td>60</td> 
-                                        <!-- <td style="display: flex;"> -->
-                                        <td colspan="3" style="display: flex;padding-bottom: 1.3rem;">
-                                            <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#formulair_modification" ><i class="fa-regular fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-danger me-1 " data-bs-toggle="modal" data-bs-target="#delete_formulair"><i class="fa-solid fa-trash"></i></button>    
-                                        <button type="button" class="btn btn-success">voir liste</button>
-                                        </td>  
-                                    </tr>
-                                    <tr> 
-                                        <td>3</td><td>02-08-2023</td><td>30-012-2023</td><td>thies</td><td>900</td><td>500</td><td>400</td> 
+                                        <td><?= $numero++ ?></td><td>02-08-2023</td><td>30-012-2023</td><td>thies</td><td>900</td><td>500</td><td>400</td> 
                                         <!-- <td colspan="3" style="display: flex;"> -->
                                             <td style="display: flex;padding-bottom: 1.3rem;">
                                             <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#formulair_modification" ><i class="fa-regular fa-pen-to-square"></i></button>
@@ -60,6 +49,11 @@
                                             <button type="button" class="btn btn-success">voir liste</button>
                                         </td>  
                                     </tr>
+                                         <?php  }  ?>
+
+                                <?php  } else{ ?>
+                                    <tr> <td colspan="8" class="alert alert-warning"> Pas encore de rendez vous</td></tr>
+                                <?php } ?>
                                     </table>
                                 <!-- fin liste rendez vous creer -->
                              
