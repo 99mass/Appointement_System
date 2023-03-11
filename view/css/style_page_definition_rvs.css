@@ -52,12 +52,12 @@ body{
 } */
 
 #formulair .modal-body .btn-exit,
-#formulair_modification .modal-body .btn-exit,
+.main .formulair_modification2 .modal-body .btn-exit,
 #delete_formulair .modal-body .btn-exit{
   text-align: end;
 }
  #formulair .modal-body .btn-exit .btn-close,
-  #formulair_modification .modal-body .btn-exit .btn-close,
+.formulair_modification2 .modal-body .btn-exit .btn-close,
   #delete_formulair .modal-body .btn-exit .btn-close{
   color: white;
   background-color: white;
@@ -66,7 +66,7 @@ body{
   left: 3rem;
  }
 #formulair .modal-body .contenu-form .input-form .btn-valider-connexion,
-#formulair_modification .modal-body .contenu-form .input-form .btn-valider-connexion{
+.formulair_modification2 .modal-body .contenu-form .input-form .btn-valider-connexion{
   width: 10rem;
    padding-bottom: 0.5rem;
    padding-top: 0.5rem;
@@ -75,30 +75,30 @@ body{
 }
 
 #formulair .modal-body .contenu-form .input-form .btn-valider-connexion,
-#formulair_modification .modal-body .contenu-form .input-form .btn-valider-connexion{
+.formulair_modification2 .modal-body .contenu-form .input-form .btn-valider-connexion{
 margin-bottom: 1rem;
 }
 #formulair .modal-body .body-form .div-multi-forms,
-#formulair_modification .modal-body .body-form .div-multi-forms{
+.formulair_modification2 .modal-body .body-form .div-multi-forms{
     width: 100%;
     display: block;
     text-align: left;
     margin: 2rem 0rem 2rem 4rem;
 }
 #formulair .modal-body .body-form .div-multi-forms .conten-form-check,
-#formulair_modification .modal-body .body-form .div-multi-forms .conten-form-check{
+.formulair_modification2 .modal-body .body-form .div-multi-forms .conten-form-check{
      margin-left: 2rem;
 }
 #formulair .modal-body .body-form .div-multi-forms h5 i,
-#formulair_modification .modal-body .body-form .div-multi-forms h5 i{
+.formulair_modification2 .modal-body .body-form .div-multi-forms h5 i{
     color:blue;
     margin-right:  0.5rem;
 
 }
 #formulair .modal-body .body-form .div-multi-forms .form_1,
 #formulair .modal-body .body-form .div-multi-forms .form_2,
-#formulair_modification .modal-body .body-form .div-multi-forms .form_1,
-#formulair_modification .modal-body .body-form .div-multi-forms .form_2{
+.formulair_modification2 .modal-body .body-form .div-multi-forms .form_1,
+.formulair_modification2 .modal-body .body-form .div-multi-forms .form_2{
      border-left: 3px solid blue;
      padding-left: 1rem;
      margin-bottom: 2rem;
@@ -106,14 +106,13 @@ margin-bottom: 1rem;
 
 #formulair .modal-body .body-form .div-multi-forms .form_2 .input-group,
 #formulair .modal-body .body-form .div-multi-forms .conten-form-check .input-group,
-#formulair_modification .modal-body .body-form .div-multi-forms .form_2 .input-group,
-#formulair_modification .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
+.formulair_modification2 .modal-body .body-form .div-multi-forms .form_2 .input-group,
+.formulair_modification2 .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
     width: 35%;
 }
 #formulair .modal-body .body-form .div-multi-forms .form_1 #btn-form_1,
-#formulair_modification .modal-body .body-form .div-multi-forms .form_1 #btn-form_1{
+.formulair_modification2 .modal-body .body-form .div-multi-forms .form_1 #btn-form_1{
     margin: 1.5rem 0rem 0rem 2rem;
-    /* padding: 0.5rem 3rem; */
     font-size: 1rem;
 }
 .main .section .grid-max #section-child1 .conten-rv #list_group {

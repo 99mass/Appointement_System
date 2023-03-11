@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <!-- include css personnel -->
-    <link rel="stylesheet" href="../view/css/style_page_definition_rv.css">
+    <link rel="stylesheet" href="../view/css/style_page_definition_rvs.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/link.php") ?>
     <title>Appointment-System</title>
@@ -34,19 +34,18 @@
                                 <table class="table table-hover">
                                     <th>#</th>
                                     <th>Date-Debut</th><th>Date-Exp</th><th>Lieu</th><th>Total place</th><th>Place prises</th><th>Place restantes</th> <th colspan="3">Action</th>
-                                
                                 <?php  require_once "../model/read_rv.php";
                                     if (count($liste_rv)>0) { 
                                         $numero=1;
-                                        foreach ($liste_rv as $value) {      
+                                        foreach ($liste_rv as $colonne) {      
                                 ?>
                                     <tr> 
-                                        <td><?= $numero++ ?></td><td>02-08-2023</td><td>30-012-2023</td><td>thies</td><td>900</td><td>500</td><td>400</td> 
+                                        <td><?= $numero++ ?></td><td><?= $colonne["date_debut"]?></td><td><?= $colonne["date_expiration"]?></td><td><?= $colonne["lieu_rv"]?></td><td><?= $colonne["total_places"]?></td><td>---</td><td>---</td> 
                                         <!-- <td colspan="3" style="display: flex;"> -->
                                             <td style="display: flex;padding-bottom: 1.3rem;">
-                                            <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#formulair_modification" ><i class="fa-regular fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#formulair_modification<?= $colonne["id"]?>" ><i class="fa-regular fa-pen-to-square"></i></button>
                                             <button type="button" class="btn btn-danger me-1 " data-bs-toggle="modal" data-bs-target="#delete_formulair"><i class="fa-solid fa-trash"></i></button>
-                                            <button type="button" class="btn btn-success">voir liste</button>
+                                            <button type="button" class="btn btn-success">voir liste<?= $colonne["id"]?></button>
                                         </td>  
                                     </tr>
                                          <?php  }  ?>
@@ -64,7 +63,7 @@
 
                         </div>
                     </div>
-                    <div id="section-child2" class="g-col-6">
+                    <!-- <div id="section-child2" class="g-col-6">
                         <h3 >listes personnes inscrites</h3>
                          <table class="table table-hover">
                             <th>#</th><th>Prènom</th><th>Nom</th><th>Date Naissance</th><th>Lieu Naissance</th><th>Address E-mail</th> <th >Date Inscription</th> <th >Heure Inscription</th> <th >code Accés</th>
@@ -78,7 +77,7 @@
                                 <td>3</td><td>babacar</td> <td>diop</td><td>diourbel</td><td>14-12-1998</td><td>babacardiop12@gmail.com</td><td>04-06-2023</td><td>13h55mn</td><td>LM123</td>
                             </tr>
                         </table>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

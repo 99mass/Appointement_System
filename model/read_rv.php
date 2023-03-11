@@ -13,5 +13,9 @@ $query=$db->prepare($sql);
 $query->execute();
  $liste_rv= $query->fetchAll(PDO::FETCH_ASSOC);
 
+$sql="SELECT * FROM infos_exiger_du_rv WHERE id_rv=$id_rv ORDER BY id ASC";
+$query=$db->prepare($sql);
+$query->execute();
+ $liste_rvs= $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
