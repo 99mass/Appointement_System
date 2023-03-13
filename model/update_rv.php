@@ -1,8 +1,8 @@
 <?php
 @session_start(); // on demare la session
 
-ini_set('display_errors', 1);
-error_reporting(~0);
+// ini_set('display_errors', 1);
+// error_reporting(~0);
 
 // appele de la base donné
 require_once("../core/dbClient.php");
@@ -23,14 +23,10 @@ $total_places=htmlspecialchars(trim(strip_tags($_POST["totalPersonne"])));
 if (isset($prenom) && isset($nom) && isset($date_de_naissance) && isset($lieu_de_naissance) && isset($mail) && isset($autres_infos) && isset($heure_convocation) 
     && isset($date_debut) && isset($date_expiration) && isset($lieu_rv) && isset($total_places)  ) {
   
-    $sql="UPDATE `infos_exiger_du_rv` SET `prenom`=:prenoms,`nom`=:noms,`date_de_naissance`=:date_de_naissances,`lieu_de_naissance`=:lieu_de_naissances
+    $sql="UPDATE `infos_exiger_du_rv` SET `prenom`=:prenoms,`nom`=:noms,`date_de_naissance`=:date_de_naissances,`lieu_de_naissance`=:lieu_de_naissances,
                                         `mail`=:mails,`autres_infos`=:autres_infoss,`heure_convocation`=:heure_convocations,
                                         `date_debut`=:date_debuts,`date_expiration`=:date_expirations,`lieu_rv`=:lieu_rvs,`total_places`=:total_placess
          WHERE `id`=:idd;";
-    //  $sql="UPDATE infos_exiger_du_rv SET prenom=$prenom ,nom=$nom ,date_de_naissance=$date_de_naissance,lieu_de_naissance=$lieu_de_naissance
-    //                                     mail=$mail,autres_infos=$autres_infos ,heure_convocation=$heure_convocation,
-    //                                     date_debut=$date_debut ,date_expiration=$date_expiration ,lieu_rv=$lieu_rv ,total_places=$total_places
-    //      WHERE id=$id";
     $requet=$db->prepare($sql);
 
     $requet->bindValue(":idd",$id);
@@ -51,9 +47,9 @@ if (isset($prenom) && isset($nom) && isset($date_de_naissance) && isset($lieu_de
          $_SESSION['success']="Rendez Vous Modfier Avec reussit ";
          // il reste sur sa page de profile
     }else {
-        $_SESSION['erreur']="nooooooooooooooooooooooooooooo!";
+        $_SESSION['erreur3']="Veillez réessayez une erreure c'est produit.";
     }
-     header("Location: ../view/page_definition_rv.php");
+     header("Location: ../view/dasboard.php");
 
 }
 

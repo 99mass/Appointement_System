@@ -26,7 +26,7 @@ body{
 }
 
 .main .section .grid-max #section-child1{
-    width: 65%;
+    width: 80%;
     margin:0% 0% 0% 5%;
 }
 .main .section .grid-max #section-child2{
@@ -43,6 +43,51 @@ body{
     width: 100%;
     height: auto;
 }
+.main .section .grid-max #section-child1 .conten-rv #menu_avant_liste_rv{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1%;
+    
+}
+ #content-lien{
+    padding: 0.2em 1rem;
+    border: 1px solid gray;
+      box-shadow: 1px 1px 5px inset gainsboro;
+}
+ #content-lien i{
+    cursor: pointer;
+ 
+ }
+
+ #copy1{
+    font-size: small;
+    position: relative;
+    top: -3rem;
+    left: 101%;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem 0rem 1rem 0rem;
+    display: none;
+}
+#copy2{
+    font-size: small;
+    position: relative;
+     top: -3rem;
+    left: 101%;
+    font-weight: bold;
+   background-color:  green;
+    color: white;
+    width: fit-content;
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem 0rem 1rem 0rem;
+    display: none;
+}
+thead{
+    background: lightcyan;
+}
 
 /* formulair de creation de rendez vous */
 /* #formulair .modal-body,
@@ -51,22 +96,18 @@ body{
   height: auto;
 } */
 
-#formulair .modal-body .btn-exit,
-.main .formulair_modification2 .modal-body .btn-exit,
-#delete_formulair .modal-body .btn-exit{
+#formulair .modal-body .btn-exit{
   text-align: end;
 }
- #formulair .modal-body .btn-exit .btn-close,
-.formulair_modification2 .modal-body .btn-exit .btn-close,
-  #delete_formulair .modal-body .btn-exit .btn-close{
+ #formulair .modal-body .btn-exit .btn-close
+  {
   color: white;
   background-color: white;
   position: relative;
   top: -2rem;
   left: 3rem;
  }
-#formulair .modal-body .contenu-form .input-form .btn-valider-connexion,
-.formulair_modification2 .modal-body .contenu-form .input-form .btn-valider-connexion{
+#formulair .modal-body .contenu-form .input-form .btn-valider-connexion{
   width: 10rem;
    padding-bottom: 0.5rem;
    padding-top: 0.5rem;
@@ -74,44 +115,35 @@ body{
    font-size: 1.5rem;
 }
 
-#formulair .modal-body .contenu-form .input-form .btn-valider-connexion,
-.formulair_modification2 .modal-body .contenu-form .input-form .btn-valider-connexion{
+#formulair .modal-body .contenu-form .input-form .btn-valider-connexion{
 margin-bottom: 1rem;
 }
-#formulair .modal-body .body-form .div-multi-forms,
-.formulair_modification2 .modal-body .body-form .div-multi-forms{
+#formulair .modal-body .body-form .div-multi-forms{
     width: 100%;
     display: block;
     text-align: left;
     margin: 2rem 0rem 2rem 4rem;
 }
-#formulair .modal-body .body-form .div-multi-forms .conten-form-check,
-.formulair_modification2 .modal-body .body-form .div-multi-forms .conten-form-check{
+#formulair .modal-body .body-form .div-multi-forms .conten-form-check{
      margin-left: 2rem;
 }
-#formulair .modal-body .body-form .div-multi-forms h5 i,
-.formulair_modification2 .modal-body .body-form .div-multi-forms h5 i{
+#formulair .modal-body .body-form .div-multi-forms h5 i{
     color:blue;
     margin-right:  0.5rem;
 
 }
 #formulair .modal-body .body-form .div-multi-forms .form_1,
-#formulair .modal-body .body-form .div-multi-forms .form_2,
-.formulair_modification2 .modal-body .body-form .div-multi-forms .form_1,
-.formulair_modification2 .modal-body .body-form .div-multi-forms .form_2{
+#formulair .modal-body .body-form .div-multi-forms .form_2{
      border-left: 3px solid blue;
      padding-left: 1rem;
      margin-bottom: 2rem;
 }
 
 #formulair .modal-body .body-form .div-multi-forms .form_2 .input-group,
-#formulair .modal-body .body-form .div-multi-forms .conten-form-check .input-group,
-.formulair_modification2 .modal-body .body-form .div-multi-forms .form_2 .input-group,
-.formulair_modification2 .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
+#formulair .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
     width: 35%;
 }
-#formulair .modal-body .body-form .div-multi-forms .form_1 #btn-form_1,
-.formulair_modification2 .modal-body .body-form .div-multi-forms .form_1 #btn-form_1{
+#formulair .modal-body .body-form .div-multi-forms .form_1 #btn-form_1{
     margin: 1.5rem 0rem 0rem 2rem;
     font-size: 1rem;
 }

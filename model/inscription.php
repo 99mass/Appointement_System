@@ -11,6 +11,7 @@ $pays=htmlspecialchars(trim(strip_tags($_POST["pays"])));
 $mail=htmlspecialchars(trim(strip_tags($_POST["mail"])));
 $password=htmlspecialchars(trim(strip_tags($_POST["password"])));
 
+
 //on verifie si les champs existes
 if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  && isset($mail) && isset($password)) {
 
@@ -23,10 +24,10 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
         if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
                 $_SESSION['erreur']="Email incorect.";
                 header("Location: ../view/index.php");
-        }
-        $password_hashed=password_hash($password,PASSWORD_DEFAULT);   
-        $sql="INSERT INTO client(id,nom_entreprise_ou_user,domaine,pays,email,mot_de_passe)
-                VALUES(null,:nom,:dom,:pay,:mail,:motpass)";
+        }else{
+        $password_hashed=password_hash($password,PASSWORD_ARGON2ID);   
+        $sql="INSERT INTO client(id,nom_entreprise_ou_user,domaine,pays,email,mot_de_passe,roles)
+                VALUES(null,:nom,:dom,:pay,:mail,:motpass,'EN')";
             $query=$db->prepare($sql);
             // Ajout des données protégées
             $query->bindParam(":nom",$nom_entreprise_or_utilisaterur);
@@ -44,12 +45,13 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
                     "nom_entreprise_ou_user"=>$user["nom_entreprise_ou_user"],
                     "domaine"=>$user["domaine"],
                     "pays"=>$user["pays"],
-                    "email"=>$user["email"]
+                    "email"=>$user["email"],
+                     "roles"=>$user["roles"]
                 ];
                 // si le compte exite on le redirie vers sa page de profile
-                header("Location: ../view/page_definition_rv.php");
+                header("Location: ../view/dasboard.php");
             }
-            
+        }
      }
 
 

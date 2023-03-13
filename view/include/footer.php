@@ -1,4 +1,4 @@
-   <div class="footer-clean">
+ <div class="footer-clean" style="margin-top: 40%;">
         <footer>
             <div class="container">
                 <div class="row justify-content-center">

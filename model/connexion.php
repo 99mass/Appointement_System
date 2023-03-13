@@ -16,7 +16,7 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($password)) {
         $_SESSION['erreur1']="E-mail et/ou Mot de passe Incorrect.";
             header("Location: ../view/index.php");
     }
-        $sql="SELECT id,nom_entreprise_ou_user,domaine,pays,email,mot_de_passe FROM client WHERE nom_entreprise_ou_user=:nom OR email=:mail  ";
+        $sql="SELECT id,nom_entreprise_ou_user,domaine,pays,email,mot_de_passe,roles FROM client WHERE nom_entreprise_ou_user=:nom OR email=:mail  ";
             $query=$db->prepare($sql);
             // Ajout des données protégées
             $query->bindParam(":nom",$nom_entreprise_or_utilisaterur);
@@ -41,11 +41,13 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($password)) {
                     "nom_entreprise_ou_user"=>$user["nom_entreprise_ou_user"],
                     "domaine"=>$user["domaine"],
                     "pays"=>$user["pays"],
-                    "email"=>$user["email"]
+                    "email"=>$user["email"],
+                     "roles"=>$user["roles"]
                 ];
-
+                
                 // si le compte exite on le redirie vers sa page de profile
-                header("Location: ../view/page_definition_rv.php");
+                header("Location: ../view/dasboard.php");
+                
             }
 
 

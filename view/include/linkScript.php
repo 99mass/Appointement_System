@@ -43,6 +43,16 @@ else if(isset($_SESSION['success'])){  ?>
             </script>
 <?php unset($_SESSION['erreur1']);  } ?>
 
+<?php if(isset($_SESSION['erreur3'])){  ?>
+       <script>
+            Swal.fire(
+                       '<?php echo $_SESSION['erreur3']?>',
+                       'clicker sur le button!',
+                       'error'
+                    )
+            </script>
+  <?php unset($_SESSION['erreur3']);  }  ?>
+
 <!-- formulaire de modification de mo de passe -->
   <!-- < ?php if (isset($_SESSION['getPass'])) {  ?> -->
     <!-- <script>
