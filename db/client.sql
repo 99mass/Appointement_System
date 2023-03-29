@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 24 mars 2023 à 20:50
+-- Généré le : mer. 29 mars 2023 à 23:39
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -44,10 +44,11 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`id`, `nom_entreprise_ou_user`, `domaine`, `pays`, `email`, `mot_de_passe`, `roles`) VALUES
 (3, '', '', '', '', '', ''),
 (7, 'tigo', 'télécommunications', 'Afrique_du_sud', 'tigo@gmail.com', '$2y$10$MN6U5dIK0xS1a', 'EN'),
-(8, 'sonatel', 'télécommunications', 'Senegal', 'sonatel@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$ZlRXWHpsdkRoemg2bmw1Zw$PkSIITJpOUPxLotgSAmXiJyTZQ3heR7jL9Kmfe1CwAA', 'EN'),
+(8, 'sonatel', 'télécommunications', 'Senegal', 'sonatel@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$QW1jVmZQYktnMy5ROUwubg$SqYw6VnRcVe7OfFHMmRvEIUosEBAtihE4tZuPoNOCkU', 'EN'),
 (9, '3fpt', 'financier', 'Senegal', 'fp3tsenegal@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$M0d3UE9vaGxtN1F6a1ptSg$P4ZJwyoaol1VDO0AsQLyg8dMYPv/TZl1TuU46/m9r38', 'EN'),
 (10, 'free', 'télécommunications', 'Senegal', '4free@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$WUNQYmF2ZjMuMFBscWZvTw$admwEK3VOC2j0B+DpZN8Q0WEHWckTHZDEOGD3/unbac', 'EN'),
-(11, 'lsll', 'education', 'Senegal', 'lsll@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$bWx0ZmU1U2ZoZVg0SU9sNw$5EUf8jAGs0Skh5d+SDwKVk4WVV9+6omR6yxcy+Z6YYM', 'EN');
+(11, 'lsll', 'education', 'Senegal', 'lsll@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$bWx0ZmU1U2ZoZVg0SU9sNw$5EUf8jAGs0Skh5d+SDwKVk4WVV9+6omR6yxcy+Z6YYM', 'EN'),
+(12, 'diop', 'financier', 'Angola', 'diopsamba408@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$Ylc1SkhJaGFoQzJHVzFyVA$YnYbjrh5nQqSv6H/eCG8aPIciI60N7Q7Mqz7xVhWQKI', 'EN');
 
 --
 -- Index pour les tables déchargées
@@ -67,7 +68,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

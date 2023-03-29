@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 24 mars 2023 à 20:51
+-- Généré le : mer. 29 mars 2023 à 23:39
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -62,12 +62,11 @@ CREATE TABLE `infos_exiger_du_rv` (
 
 INSERT INTO `infos_exiger_du_rv` (`id`, `id_rv`, `prenom`, `nom`, `date_de_naissance`, `lieu_de_naissance`, `genre`, `pays`, `cni`, `mail`, `heure_convocation`, `date_debut`, `date_expiration`, `lieu_rv`, `total_places`, `acces`, `autre1`, `autre2`, `autre3`, `autre4`, `autre5`, `autre6`, `autre7`, `autre8`, `autre9`, `autre10`) VALUES
 (3, 3, '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', 0, 0, '', '', '', '', '', '', '', '', '', ''),
-(136, 8, '1', '1', '1', '1', '1', '1', '1', '1', '22:30', '2023-03-17', '2023-04-07', 'saly', 234, 1, 'date_de_delivrance', 'lieu_de_delivrance', 'structure_de_livrance', 'quartier', 'nom_chef_de_quatier', 'nom_maire', 'proffession_actuel', 'proffession_pere', 'proffession_mere', 'nombre_de_frere_et_soeur'),
-(137, 8, '1', '', '', '', '', '', '', '1', '23:36', '2023-04-07', '2023-03-26', 'podor', 346, 0, '', '', '', '', '', '', '', '', '', ''),
-(139, 8, '1', '', '', '', '', '', '', '1', '00:40', '2023-03-24', '2023-03-25', 'podor', 156, 0, '', '', '', '', '', '', '', '', '', ''),
-(140, 8, '', '', '', '', '', '', '', '1', '20:58', '2023-03-18', '2023-03-24', 'pikine', 600, 1, 'date_de_delivrance', 'lieu_de_delivrance', 'nationalite', '', '', '', '', '', '', ''),
-(142, 8, '1', '0', '0', '0', '0', '0', '0', '0', '00:25', '2023-03-10', '2023-04-09', 'gounass', 5, 1, 'situation_matrimonial', '', '', '', '', '', '', '', '', ''),
-(143, 10, '1', '1', '1', '1', '1', '0', '0', '1', '23:30', '2023-03-23', '2023-04-08', 'Dakar', 432, 1, '', '', '', '', '', '', '', '', '', '');
+(143, 10, '1', '1', '1', '1', '1', '0', '0', '1', '23:30', '2023-03-23', '2023-04-08', 'Dakar', 432, 1, '', '', '', '', '', '', '', '', '', ''),
+(144, 8, '1', '1', '1', '1', '1', '1', '1', '1', '10:00', '2023-03-25', '2023-04-09', 'dakar', 200, 1, 'date_de_delivrance', '', '', '', '', '', '', '', '', ''),
+(145, 8, '1', '1', '', '', '', '', '', '1', '22:15', '2023-03-25', '2023-04-08', 'dakar', 1, 1, '', '', '', '', '', '', '', '', '', ''),
+(146, 12, '1', '1', '', '', '', '', '', '1', '20:00', '2023-03-29', '2023-04-09', 'saly', 23, 1, '', '', '', '', '', '', '', '', '', ''),
+(147, 12, '1', '1', '1', '1', '', '', '', '1', '11:27', '2023-03-16', '2023-04-09', 'paris', 45, 0, 'ville', '', '', '', '', '', '', '', '', '');
 
 --
 -- Index pour les tables déchargées
@@ -88,7 +87,7 @@ ALTER TABLE `infos_exiger_du_rv`
 -- AUTO_INCREMENT pour la table `infos_exiger_du_rv`
 --
 ALTER TABLE `infos_exiger_du_rv`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- Contraintes pour les tables déchargées
