@@ -48,18 +48,20 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
                     "email"=>$user["email"],
                      "roles"=>$user["roles"]
                 ];
+                $sessionId=$_SESSION['user']['id'];
+                $nom_entreprise_ou_user=$_SESSION['user']['nom_entreprise_ou_user'];
                 // si le compte exite on le redirie vers sa page de profile
-                header("Location: ../view/dasboard.php");
+                header("Location: ../view/dasboard.php?id_rv_get=$sessionId&name=$nom_entreprise_ou_user");
             }
         }
      }
 
-
-
+    // fermer la connexion à la base de données
+    
 
 }
 
-
+$db->close();
 ?>
 
 

@@ -8,8 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" ></script>
 
     <!-- include sweet alert -->
-<script src="../view/include/sweetalert2.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<!-- <script src="../view/include/sweetalert.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- on affiche le message d'erreur en cas les informations sont incorrectes -->
 <?php if (isset($_SESSION['erreur'])) {  ?>
@@ -53,9 +53,12 @@ else if(isset($_SESSION['success'])){  ?>
             </script>
   <?php unset($_SESSION['erreur3']);  }  ?>
 
-<!-- formulaire de modification de mo de passe -->
-  <!-- < ?php if (isset($_SESSION['getPass'])) {  ?> -->
-    <!-- <script>
-        Swal.fire("<form action='../model/connexion.php'  method='post'  class='input-form'><div class='form-floating'><input type='password' name='password' class='form-control' id='floatingPassword' placeholder='Password'><label for='floatingPassword'>Mot de passe</label></div><button type='submit'   id='but' class='btn btn-success btn-valider-connexion'>Modifier</button></form>")
-    </script> -->
-  <!-- < ?php unset($_SESSION['getPass']);  } ?> -->
+<?php if(isset($_SESSION['success2'])){  ?>
+       <script>
+            Swal.fire(
+                       '<?php echo $_SESSION['success']?>',
+                       'clicker sur le button!',
+                       'success'
+                    )
+            </script>
+  <?php unset($_SESSION['success2']);  }  ?>

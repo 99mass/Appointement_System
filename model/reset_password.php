@@ -12,7 +12,7 @@ if (isset($mail_user)) {
 
     //on verifie si les champs sont  vide
     if (empty($mail_user)) {
-        $_SESSION['erreur1']="E-mail Incorrect.";
+        $_SESSION['erreur1']="E-mail incorrect.";
             header("Location: ../view/index.php");
     }
     if(!filter_var($mail_user, FILTER_VALIDATE_EMAIL)){
@@ -44,9 +44,9 @@ if (isset($mail_user)) {
                 header("Location: ../view/newPassword.php");
             }
     }
-
+   
 }
-
+$db->close();
 
 ?>
 

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../view/css/styles.css">
     <link rel="stylesheet" href="../view/css/styel_newPassword.css">
     <!--Includes Cdn Css -->
-    <?php require_once ("../view/include/link.php") ?>
+    <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
 </head>
 <body>
@@ -49,7 +49,7 @@
     <!-- include js personnel -->
     <script src="../view/js/check_Pass.js"></script>
     <!-- Include Cdn js -->
-    <?php require_once ("../view/include/linkScript.php") ?>
+    <?php require_once ("../view/include/linkScripts.php") ?>
 
   </body>
 </html>

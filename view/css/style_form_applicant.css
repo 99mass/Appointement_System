@@ -1,0 +1,80 @@
+/* modal inscription */
+.staticBackdrop2{
+  margin-top: 0rem;
+ 
+}
+
+.staticBackdrop2 .modal-body{
+  height: 40rem;
+}
+
+.staticBackdrop2 .modal-body .btn-exit{
+  text-align: end;
+}
+.staticBackdrop2 .modal-body .btn-exit .btn-close{
+  color: white;
+  background-color: white;
+  position: relative;
+  top: -2rem;
+  left: 3rem;
+ }
+.staticBackdrop2 .modal-body .body-form{
+  display: flex;
+}
+.staticBackdrop2 .modal-body .contenu-form{
+  width: 49%;
+  height: 37.2rem;
+}
+.staticBackdrop2 .modal-body .image-form{
+  background-image: url('../image/signup-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 51%;
+  height: 40.2rem;
+  position: relative;
+  top: -2.8rem;
+  left: 1em;
+  display: block;
+}
+.staticBackdrop2 .modal-body .image-form h2{
+  width: 95%;
+  margin: 0.5rem;
+  margin-top: 50%;
+  text-align: center;
+  color: white;
+}
+.staticBackdrop2 .modal-body .image-form h2 span{
+
+  font-weight: bold;
+  color: darkorange;
+}
+.staticBackdrop2 .modal-body .contenu-form .input-form{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.staticBackdrop2 .modal-body .contenu-form .input-form .form-floating{
+  margin-bottom: 0.5rem;
+}
+.staticBackdrop2 .modal-body .contenu-form .input-form .valider-connexion{
+   width: 10rem;
+   padding-bottom: 0.2rem;
+   padding-top: 0.2rem;
+   margin-top: 1rem;
+   margin-bottom: 0.5rem;
+   font-size: 1.5rem;
+}
+
+
+#conten-form-checkk{
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  border-left:2px solid blue;
+ 
+}
+#conten-form-checkk .inp-g{
+   margin-bottom: 0.5rem;
+}
+#conten-form-checkk .inp-g span{
+ margin-right: 0.5rem;
+}

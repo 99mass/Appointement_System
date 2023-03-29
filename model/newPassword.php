@@ -1,6 +1,8 @@
 <?php
 @session_start(); // on demare la session
 
+$sessionId=$_SESSION['user']['id'];
+$nom_entreprise_ou_user=$_SESSION['user']['nom_entreprise_ou_user'];
 // appele de la base donné
 require_once("../core/dbClient.php");
   
@@ -15,13 +17,14 @@ if (isset($newPassword) ) {
     if ($requet->execute()) {
          $_SESSION['success']="Mot de passe Modfier avec succé ";
          // il reste sur sa page de profile
-           header("Location: ../view/dasboard.php");
+           header("Location: ../view/dasboard.php?id_rv_get=$sessionId&name=$nom_entreprise_ou_user");
     }else {
         $_SESSION['erreur3']="Veillez réessayez une erreure c'est produit!";
-        header("Location: ../view/dasboard.php");
+        header("Location: ../view/dasboard.php?id_rv_get=$sessionId&name=$nom_entreprise_ou_user");
     }
     
 
 }
 
+$db->close();
 ?>

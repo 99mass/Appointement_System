@@ -1,0 +1,64 @@
+    /* Style pour le titre */
+    h2 {
+    text-align: center;
+    }
+
+    /* Style pour le formulaire */
+    form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #aaa;
+    }
+
+    /* Style pour les labels */
+    label {
+    font-weight: bold;
+    width: 55%;
+    margin-top:0.5rem;
+    }
+
+    /* Style pour les champs */
+    input[type="text"],
+    input[type="date"],
+    input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    }
+    
+
+    /* Style pour le bouton de soumission */
+    input[type="submit"],.Modifier,.envoyer {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    }
+    .ligne{
+    display:flex;
+    }
+    .ligne input{
+    background-color: white;
+    }
+    .form1{
+    display:none;
+    }
+    .Modifier {
+    background-color: blue;
+    }
+    /* Style pour le survol du bouton de soumission */
+    input[type="submit"]:hover,.Modifier :hover {
+    background-color: #3e8e41;
+    }
+
+    #footer{
+        margin-top: -15rem;
+    }

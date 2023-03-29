@@ -1,5 +1,5 @@
-<option value="" selected="selected">Pays </option>
 
+<option value="">Pays </option>
 <option value="Afghanistan">Afghanistan </option>
 <option value="Afrique_Centrale">Afrique_Centrale </option>
 <option value="Afrique_du_sud">Afrique_du_Sud </option>
@@ -204,7 +204,7 @@
 <option value="Samoa_Occidentales">Samoa_Occidentales</option>
 <option value="Samoa_Americaine">Samoa_Americaine </option>
 <option value="Sao_Tome_et_Principe">Sao_Tome_et_Principe </option>
-<option value="Senegal">Senegal </option>
+<option value="Senegal" >Senegal </option>
 <option value="Seychelles">Seychelles </option>
 <option value="Sierra Leone">Sierra Leone </option>
 <option value="Singapour">Singapour </option>

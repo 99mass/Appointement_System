@@ -1,15 +1,15 @@
 
- <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 mb-4 border-bottom">
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 mb-4 border-bottom">
           <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 "> </a>
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="../view/index.php" class="nav-link px-2">Home</a></li>
+            <li><a href="../view/admin.php" class="nav-link px-2">Home</a></li>
             <li><a href="../view/contacte_nous.php" class="nav-link px-2 ">Contacte</a></li>
             <li><a href="../view/a_propos_de_nous.php" class="nav-link px-2">A Propos</a></li>
           </ul>
-            <?php if (empty($_SESSION['user']["id"])) {  ?>
-             <div class="col-md-2 text-end bouton me-4">
+            <?php if (empty($_SESSION['admin']["id"])) {  ?>
+             <div class="col-md-1 text-end bouton me-4">
                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Se connecter</button>
-               <button type="button" id="btn-inscript" href="../page_definition_rv.php" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button>
+               <!-- <button type="button" id="btn-inscript" href="../page_definition_rv.php" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button> -->
             <?php }else{ ?>
                   <!-- <div class="col-md-1 text-end bouton me-4 ">
                 <a type="button" id="btn-decon" href="../model/deconnexion.php" class="btn btn-primary ml-2 " >Se déconnecter</a> -->
@@ -18,10 +18,10 @@
                      Plus
                   </button>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="../view/profile.php"><i class="fa-solid fa-user me-1"></i>Profile</a>
+                     <!-- <a class="dropdown-item" href="../view/profile.php"><i class="fa-solid fa-user me-1"></i>Profile</a> -->
                      <!-- <a class="dropdown-item" href="#"><i class="fa-solid fa-question me-1" ></i>Question</a> -->
                      <div class="dropdown-divider"></div>
-                     <a  class="dropdown-item" href="../model/deconnexion.php"  style="text-decoration:none;boder:none,text-align:center" ><i class="fa-solid fa-lock me-1"></i>Se déconnecter</a> 
+                     <a  class="dropdown-item" href="../model/deconnexion_admin.php"  style="text-decoration:none;boder:none,text-align:center" ><i class="fa-solid fa-lock me-1"></i>Se déconnecter</a> 
                   </div>
             <?php }?>
          </div> 

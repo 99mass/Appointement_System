@@ -13,13 +13,11 @@
 <body>
    <div class="main">
      <!--Debut header  -->
-      <?php require_once("../view/include/header.php");
+      <?php require_once("../view/include/header_admin.php");
           //include formulaire de recuperation de password
            require_once("../view/include/reset_password.php");
           //  include formulaire de connexion
-           require_once "../view/include/form_connexion.php";
-            // include formulaire d'inscription
-           require_once "../view/include/form_inscripton.php";
+           require_once "../view/include/form_conect_admin.php";
        ?>
        
 

@@ -1,34 +1,34 @@
- <div class="footer-clean" style="margin-top: 40%;">
+ <div class="footer-clean" style="margin-top: 20%;">
         <footer>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-sm-4 col-md-3 item">
                         <h3>Entreprise</h3>
                         <ul>
-                            <li><a href="#">À propos de</a></li>
-                            <li><a href="#">Politique de confidentialité</a></li>
-                            <li><a href="#">Conditions d'utilisation</a></li>
+                            <li><a href="../view/a_propos_de_nous.php">À propos de nous</a></li>
+                            <li><a href="../view/politique_de_confidentialite.php">Politique de confidentialité</a></li>
+                            <li><a href="../view/conditions_d_utilisation.php">Conditions d'utilisation</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
                         <h3>Support</h3>
                         <ul>
                             <li><a href="#">Centre de Support</a></li>
-                            <li><a href="#">Tutorial</a></li>
-                            <li><a href="#">guide</a></li>
+                            <!-- <li><a href="#">Tutorial</a></li>
+                            <li><a href="#">guide</a></li> -->
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
                         <h3>Nous contacter</h3>
                         <ul>
-                            <li><a href="#">E-mail : sambadiop161@gmail.com</a></li>
-                            <li><a href="#">Tél : 771169551/704914548</a></li>
-                            <li><a href="#">Fax : 336751289</a></li>
+                            <li><a href="mailto:sambadiop161@gmail.com" >E-mail: <span class="fs-6"> sambadiop161@gmail.com</span></a></li>
+                            <li><a >Tél : 771169551/704914548</a></li>
+                            <li><a >Fax : 336751289</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 item social">
                         <a class="facebook" href="#"><i class="icon ion-social-facebook" ></i></a>
-                        <a class="whatsap" href="#"><i class="icon ion-social-whatsapp"></i></a>
+                        <a class="whatsap" href="https://api.whatsapp.com/send?phone=704914548"><i class="icon ion-social-whatsapp"></i></a>
                         <a class="twitter" href="#"><i class="icon ion-social-twitter"></i></a>
                         <a class="instagram" href="#"><i class="icon ion-social-instagram"></i></a>
                         
