@@ -7,15 +7,15 @@
       <div class="body-form">
         <div class="contenu-form">
             <h4  id="staticBackdropLabel">Bienvenue sur Appointment system ! <br> Veuillez Fournir votre E-mail pour Modifier votre Mot de passe </h4>
-            <p> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></p>
-            <form action="../model/reset_password.php"  method="post"  class="input-form">
+          <br>  <!-- <p> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></p> -->
+            <form action="../model/reset_password_admin.php"  method="post"  class="input-form">
                 <div class="form-floating">
                     <input type="text" name="mail_user" class="form-control" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Donnez Votre Email ?</label>
                 </div>
                 <button type="submit"   id="but" class="btn btn-success btn-valider-connexion">Valider</button>
             </form>
-        </div>
+        </div>reset_password_client.php
         <div class="image-form">
             <h1>Avec Appointment system <br>finit les problémes de gestions de rendez vous </h1>
         </div>

@@ -1,7 +1,6 @@
 <?php @session_start(); //on demarr la session
 //on verifi si l'utilisateur n'est pas conneceter si c'est le cas il ne  pourra acceder a cette page
-    if(empty($_SESSION['user']))
-      header("Location: ../view/index.php");
+    if(!empty($_SESSION['user']) && isset($_SESSION['user']) || !empty($_SESSION['admin']) && isset($_SESSION['admin']) ) {
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,13 @@
 <body>
    <div class="main">
      <!--Debut header  -->
-      <?php require_once("../view/include/header.php"); ?>
+      <?php
+        if (!empty($_SESSION["user"])) {
+          require_once("../view/include/header.php");
+        }else {
+          require_once("../view/include/header_admin.php");
+        }
+           ?>
           <div class="container container_pass">
                 <div class="card w-50 bg-light" id="card">
                 <div class="card-body">
@@ -54,4 +59,7 @@
   </body>
 </html>
 <?php 
+    }else {
+      header("Location: ../view/index.php");
+    }
 ?>

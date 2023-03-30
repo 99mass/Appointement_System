@@ -15,7 +15,7 @@
      <!--Debut header  -->
       <?php require_once("../view/include/header.php");
           //include formulaire de recuperation de password
-           require_once("../view/include/reset_password.php");
+           require_once("../view/include/form_reset_password_client.php");
           //  include formulaire de connexion
            require_once "../view/include/form_connexion.php";
             // include formulaire d'inscription

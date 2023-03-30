@@ -1,4 +1,5 @@
 <?php
+ @session_start(); //on demarr la session
 // appele de la base donné
 require_once("../core/dbClient.php");
 
@@ -32,9 +33,20 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
            $req->bindParam(":pay",$pays);
            $req->bindParam(":mail",$mail);
             if ($req->execute()!=false) {
-                header("Location: ../view/profile.php?t"); 
+                // on choisit la page ou rediriger le client en cas la requete est traiter
+                if (!empty($_SESSION["user"])) {
+                    header("Location: ../view/profile.php?t");
+                }else  {
+                    header("Location: ../view/dasboard_admin.php?t");
+                }
+                
             } else {
-                header("Location: ../view/profile.php?f"); 
+                // on choisit la page ou rediriger le client en cas la requete echou
+                if (!empty($_SESSION["user"])) {
+                    header("Location: ../view/profile.php?f");
+                }else  {
+                    header("Location: ../view/dasboard_admin.php?f");
+                }
             }
         }
     }

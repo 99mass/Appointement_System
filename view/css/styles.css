@@ -140,3 +140,23 @@
 margin-bottom: 1rem;
 }
 
+
+
+/* les medias query */
+@media screen and (max-width : 768px) {
+  .main .section_texte{
+    width: auto;
+    margin-top: -7rem; 
+    /* margin-bottom: 3rem;  */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/* .main{
+  width: 30%;
+} */
+/* 
+#div_table{
+  overflow-x: scroll;
+  background-color: brown;
+} */
+}

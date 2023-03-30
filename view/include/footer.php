@@ -103,9 +103,10 @@
         }
 
         @media (max-width:767px) {
+          
         .footer-clean .item {
             text-align:center;
-            padding-bottom:20px;
+            /* padding-bottom:20px; */
         }
         }
 

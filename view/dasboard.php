@@ -1,10 +1,9 @@
 
-<?php  @session_start(); //on demarr la session ?>
+<?php  @session_start(); //on demarr la session 
 
-<?php 
-if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
-   header("Location: ../view/index.php");
-}    
+// if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
+//    header("Location: ../view/index.php");
+// }    
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,7 @@ if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
     <meta name="viewport" content="width=, initial-scale=1.0">
     <!-- include css personnel -->
      <link rel="stylesheet" href="../view/css/style_form_applicant.css">
-    <link rel="stylesheet" href="../view/css/styledasboards.css">
+    <link rel="stylesheet" href="../view/css/styledasboardes.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
@@ -29,7 +28,7 @@ if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
             position: relative;
             top:0;
         }
-        .cacher_applicant ,#menu_avant_liste_rv *{
+        .cacher_applicant ,.cacher_appli{
             display: none;
         }
         .info_applicant{
@@ -39,6 +38,18 @@ if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
         width: 50%;
         margin-left: 25%;
         }
+        
+        @media screen and (max-width : 768px) {
+        .main .section .grid-max #section-child1{
+        width: 100%;
+        margin:0% 2%;
+        overflow-x: none;
+        }
+        .main .section .grid-max #section-child1 .conten-rv #menu_avant_liste_rv #div1 {
+            display: none;
+        }
+        }
+    
     </style>
     <?php }?>
 </head>
@@ -53,21 +64,23 @@ if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
                     <div id="section-child1" class="g-col-6 mt-4">
                         <h3 >listes rendez-vous <?= empty($_GET['mess']) ? '' : $_GET['name'] ?> </h3>
                         <div class="conten-rv">
-                                <p id="menu_avant_liste_rv" class="cacher_applicant">
-                                    <span>
+                        <?php if(!empty($_SESSION['user'])){?>
+                                <p id="menu_avant_liste_rv" class="cacher_appli" >
+                                    <div id="div1" >
                                         Cliquez sur
                                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair">Nouveau RV</button>                                       
                                         pour crèer un rendez-vous.
-                                    </span> 
-                                    <span id="content-lien" class="pt-1"> <span id="lien">?id_rv_get=<?$_SESSION['user']['id']?>&name=<?$_GET['name']?></span> <i id="iconCopy" class="fa-solid fa-copy fs-5 text-success ml-1 "></i><span id="copy1">copier lien</span><span id="copy2">copier</span></span>
+                                    </div> 
+                                    <div id="content-lien" class="pt-1" > <span id="lien">?id_rv_get=<?$_SESSION['user']['id']?>&name=<?$_GET['name']?></span> <i id="iconCopy" class="fa-solid fa-copy fs-5 text-success ml-1 "></i><span id="copy1">copier lien</span><span id="copy2">copier</span></div>
                                 </p>
+                                <?php }?>
                                <?php //include modal
                                     require_once ("../view/include/forms_create_rv.php");
                                     require_once ("../view/include/form_update_rv.php"); 
                                      require_once ("../view/include/form_delete_rv.php"); 
                                   
                                 ?>
-
+                                <div id="div_table" >
                                 <!-- debut listes rendez vous creer -->
                                 <table class="table table-hover ">
                                     <thead >
@@ -186,6 +199,7 @@ if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
                                 <?php } } }  } }  }   } ?>
 
                                     </table>
+                            </div>
                                 <!-- fin liste rendez vous creer -->
                         </div>
                     </div>

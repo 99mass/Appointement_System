@@ -48,11 +48,19 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0rem 1%;
+   
+}
+#div1{
+  width:30%
 }
  #content-lien{
     padding: 0.2em 1rem;
     border: 1px solid gray;
       box-shadow: 1px 1px 5px inset gainsboro;
+    width:auto;
+    float:right;
+    margin-top: -2.2rem;
+    text-align: end;
 }
  #content-lien i{
     cursor: pointer;
@@ -296,5 +304,51 @@ fieldset {
 
 
 
+@media screen and (max-width : 768px) {
+body .main{
+  margin-bottom: 60%;
+}
+.main #section-child1 #div_table{
+  overflow-x: scroll;
+  margin-bottom: 3rem;
+}
+.main #section-child1 #div_table table th{
+   font-size: 12px;
+}
+.main #section-child1 #div_table table tr td{
+  font-size: 10.5px;
+}
+.main .section .grid-max #section-child1 .conten-rv #menu_avant_liste_rv{
+  display: block;
+  padding: 0rem 1%;
+  position: relative;
+  overflow: hidden;
+
+  
+}
+#div1{
+  width: 100%;
+  font-size: 12px;
+}
+#content-lien{
+  width: 99.9%;
+  position: relative;
+  box-sizing: border-box;
+  font-size: x-small;
+  float: none;
+  margin-top: 1rem;
+  padding: 0rem 0rem;
+  margin-right: 3rem;
+  text-align: left;
+
+}
+#iconCopy{
+  margin-top: -1rem;
+ float: right;
+}
+#content-lien i{
+  display: block;
+}
+}
 
 

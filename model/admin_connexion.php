@@ -27,6 +27,7 @@ if (isset($login) && isset($password)) {
             // on verifie si on a ce compte dans la base de donné 
             if (empty($passDb)) {
                 $_SESSION['erreur1']="E-mail et/ou Mot de passe Incorrect.";
+                
                 header("Location: ../view/admin.php");
             }
             // on verifie si le mot donne est identique a celui stocker a la base de donné

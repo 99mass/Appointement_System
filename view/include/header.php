@@ -1,6 +1,6 @@
 
  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-4 mb-4 border-bottom">
-          <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 "> </a>
+          <a  class=" lien-vide d-flex align-items-center col-md-3 mb-2 mb-md-0 "> </a>
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="../view/index.php" class="nav-link px-2">Home</a></li>
             <li><a href="../view/contacte_nous.php" class="nav-link px-2 ">Contacte</a></li>
@@ -13,12 +13,12 @@
             <?php }else{ ?>
                   <!-- <div class="col-md-1 text-end bouton me-4 ">
                 <a type="button" id="btn-decon" href="../model/deconnexion.php" class="btn btn-primary ml-2 " >Se déconnecter</a> -->
-                <div class="btn-group col-md-1 text-end bouton me-4">
+                <div id="btn-plus" class="btn-group col-md-1 text-end bouton me-4">
                   <button type="button" id="btn-decon" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Plus
                   </button>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="../view/profile.php"><i class="fa-solid fa-user me-1"></i>Profile</a>
+                     <a class="dropdown-item" href="../view/profile.php?id_rv_get=<?=$_GET["id_rv_get"]?>&name=<?=$_GET["name"]?>"><i class="fa-solid fa-user me-1"></i>Profile</a>
                      <!-- <a class="dropdown-item" href="#"><i class="fa-solid fa-question me-1" ></i>Question</a> -->
                      <div class="dropdown-divider"></div>
                      <a  class="dropdown-item" href="../model/deconnexion.php"  style="text-decoration:none;boder:none,text-align:center" ><i class="fa-solid fa-lock me-1"></i>Se déconnecter</a> 
@@ -28,6 +28,7 @@
 </header>
 
 <style>
+      
        /* header */
          header{
             background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
@@ -55,5 +56,25 @@
             display: flex;
             padding-right: 1rem;
          }
+   /* medias query */
+   @media  screen and (max-width: 768px) {
+      header #btn-plus{
+         position: absolute;
+        
+         left:70%;
+      }
+      header{
+         display:flex;
+         /* justify-content: flex-end; */
+      }
+        header .lien-vide, header ul li {
+            display:none;
+         }
+         header{
+            width:50%
+            padding:0rem;
+         }
+      }
+
 
 </style>

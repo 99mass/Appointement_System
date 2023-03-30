@@ -1,5 +1,10 @@
 
-<?php  @session_start(); //on demarr la session ?>
+<?php  @session_start(); //on demarre la session 
+
+if(empty($_SESSION['user'])  ){
+    header("Location: ../view/index.php");
+ }  
+?>
 
 <!DOCTYPE html>
 <html lang="en">

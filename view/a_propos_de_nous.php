@@ -21,7 +21,7 @@
          <?php require_once("../view/include/header.php")?>
          <?php //include modal
              //include formulaire de recuperation de password
-           require_once("../view/include/reset_password.php");
+             require_once("../view/include/form_reset_password_client.php");
            //  include formulaire de connexion
             require_once "../view/include/form_connexion.php";
              // include formulaire d'inscription
@@ -81,10 +81,9 @@
             </form>
          </div>
 
-
-        <!-- footer -->
-     <div id="footer"> <?php require_once("../view/include/footer.php") ?></div>
      </div>  
+      <!-- footer -->
+      <?php require_once("../view/include/footer.php") ?>
 
      <?php  if ( isset($_GET['m']) && $_GET['m']=='suc') { ?>
     <script>
