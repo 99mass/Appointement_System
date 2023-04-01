@@ -13,7 +13,7 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <link rel="stylesheet" href="../view/css/style_contact_nous.css">
-    <link rel="stylesheet" href="../view/css/style_profil.css">
+    <link rel="stylesheet" href="../view/css/style_profiles.css">
      <!--Includes Cdn Css -->
      <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
@@ -33,7 +33,7 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
                     <li class="breadcrumb-item active" aria-current="page">Library</li>
                 </ol>
             </nav>
-            <h2 >Mes informations</h2>
+            <h2 ><i class="fa-solid fa-circle-info mx-2"></i>Mes informations</h2>
             <form action="../model/update_profile.php" method="post" class="form1" id="form1">
                 <div class="ligne">
                     <label for="nom" >Nom de l'entreprise / ou utilisateur :</label>

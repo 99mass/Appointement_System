@@ -7,19 +7,19 @@
             <li><a href="../view/a_propos_de_nous.php" class="nav-link px-2">A Propos</a></li>
           </ul>
             <?php if (empty($_SESSION['user']["id"])) {  ?>
-             <div class="col-md-2 text-end bouton me-4">
+             <div id="btn-con-insc" class="col-md-2 text-end bouton me-4">
                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Se connecter</button>
                <button type="button" id="btn-inscript" href="../page_definition_rv.php" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button>
-            <?php }else{ ?>
+            </div>
+               <?php }else{ ?>
                   <!-- <div class="col-md-1 text-end bouton me-4 ">
                 <a type="button" id="btn-decon" href="../model/deconnexion.php" class="btn btn-primary ml-2 " >Se déconnecter</a> -->
-                <div id="btn-plus" class="btn-group col-md-1 text-end bouton me-4">
+                <div id="btn-plus" class="btn-group col-md-1 text-end bouton ml-5">
                   <button type="button" id="btn-decon" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Plus
                   </button>
                   <div class="dropdown-menu">
                      <a class="dropdown-item" href="../view/profile.php?id_rv_get=<?=$_GET["id_rv_get"]?>&name=<?=$_GET["name"]?>"><i class="fa-solid fa-user me-1"></i>Profile</a>
-                     <!-- <a class="dropdown-item" href="#"><i class="fa-solid fa-question me-1" ></i>Question</a> -->
                      <div class="dropdown-divider"></div>
                      <a  class="dropdown-item" href="../model/deconnexion.php"  style="text-decoration:none;boder:none,text-align:center" ><i class="fa-solid fa-lock me-1"></i>Se déconnecter</a> 
                   </div>
@@ -56,25 +56,69 @@
             display: flex;
             padding-right: 1rem;
          }
+         .dropdown-item i{
+            color:blue;
+         }
    /* medias query */
-   @media  screen and (max-width: 768px) {
+
+   @media  screen and (max-width: 769px) {
       header #btn-plus{
-         position: absolute;
-        
-         left:70%;
+         margin-right:1rem;
       }
       header{
          display:flex;
-         /* justify-content: flex-end; */
       }
-        header .lien-vide, header ul li {
-            display:none;
-         }
          header{
-            width:50%
+            width:100%
             padding:0rem;
          }
+         header ul  {
+            position: relative;
+            right:4%; 
+         }
+         #btn-con-insc{
+            position: relative;
+            right:15%;
+         }
+      }
+      @media screen and (min-width : 500px and max-width : 768px  ) {
+         header #btn-plus{
+         margin-left:5rem;
       }
 
+      header .lien-vide, header ul li {
+            display:block;
+            margin-left:20rem;
+         }
+      }
+      @media  screen and (max-width: 500px) {
+         header #btn-plus{
+         position: absolute;
+         left:60%;
+         }
+         header .lien-vide, header ul li {
+            display:none;
+         }
+         #btn-con-insc{
+            position:absolute;
+            left:40%
+         }
+     }
+     @media  screen and (max-width: 375px) {
+      #btn-con-insc{
+            position:absolute;
+            left:30%
+         }
+     }
+     @media  screen and (max-width: 326px) {
+         header #btn-plus{
+         position: absolute;
+         left:50%;
+         }
+         #btn-con-insc{
+            position:absolute;
+            left:20%
+         }
+     }
 
 </style>

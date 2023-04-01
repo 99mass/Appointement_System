@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/styles.css">
+    <link rel="stylesheet" href="../view/css/styleses.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
@@ -35,7 +35,7 @@
            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button>
       </div>
             
-    <div class="container section_texte">
+    <div id="section_texte" class="container section_texte">
         <h4>C'est Quoi Appointment System ?</h4>
         <p>
             Appointment System est la solution ultime pour les entreprises qui cherchent à optimiser leur productivité tout en offrant une expérience de prise de rendez-vous facile et pratique à leurs clients. 
@@ -53,16 +53,16 @@
           <span> Sécurité et confidentialité : </span> les données de rendez-vous sont stockées en toute sécurité et de manière confidentielle, conformément aux réglementations en matière de protection des données. <br>  
          <span>Économies de coûts : </span>  les entreprises peuvent réduire les coûts administratifs et améliorer leur efficacité grâce à l'automatisation des processus de prise de rendez-vous.
         </p>
-          <h4>Listes De Nos Partenaires : </h4>
-          <div id="carouselExampleAutoplaying" class="carousel slide partenaire" data-bs-ride="carousel">
+          <h4>Listes De Nos Partenaires  </h4>
+          <div id="carouselExampleAutoplaying" class="carousel slide partenaire bg-light" data-bs-ride="carousel">
               <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <div class="carousel-item active" >
                       <img src="../view/image/sonatel.jpeg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item ">
                       <img src="../view/image/free.png" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item ">
                       <img src="../view/image/ecobank.jpg" class="d-block w-100" alt="...">
                   </div>
               </div>

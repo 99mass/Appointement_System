@@ -8,10 +8,10 @@
       <div class="body-form">
         <div class="contenu-form">
             <h4  id="staticBackdropLabel">Inscrivez-vous <br> gratuitement sur Appointment system</h4>
-            <p> <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Vous avez déjà un compte ? Connectez-vous </a></p>
+            <div> <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Vous avez déjà un compte ? Connectez-vous </a></div>
 
           <form action="../model/inscription.php"  method="post" >
-            <div class="input-form">
+            <div id="input-form" class="input-form">
                 <div class="form-floating">
                     <input type="text" name="nom_entrep_utilisateur" class="form-control" id="floatingInput" placeholder="Global Adventure code">
                     <label for="floatingInput">Nom de l'entreprise ou nom utilisateur</label>
@@ -25,8 +25,8 @@
                       <?php require_once("../view/include/select_pays.php") ?>
                     </select>
                 </div>
-                <div class="form-floating">
-                    <input type="email" name="mail" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <div id="form-floating-email" class="form-floating ">
+                    <input type="email" name="mail" class="form-control w-100" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating">

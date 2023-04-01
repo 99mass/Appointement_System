@@ -7,13 +7,14 @@
             <li><a href="../view/a_propos_de_nous.php" class="nav-link px-2">A Propos</a></li> -->
           <!-- </ul> -->
             <?php if (empty($_SESSION['admin']["id"])) {  ?>
-             <div class="col-md-1 text-end bouton me-4">
+             <div id="btn-con-insc" class="col-md-1 text-end bouton me-4">
                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Se connecter</button>
+            </div>
                <!-- <button type="button" id="btn-inscript" href="../page_definition_rv.php" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button> -->
             <?php }else{ ?>
                   <!-- <div class="col-md-1 text-end bouton me-4 ">
                 <a type="button" id="btn-decon" href="../model/deconnexion.php" class="btn btn-primary ml-2 " >Se déconnecter</a> -->
-                <div class="btn-group col-md-1 text-end bouton me-4">
+                <div id="btn-plus" class="btn-group col-md-1 text-end bouton me-4">
                   <button type="button" id="btn-decon" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Plus
                   </button>
@@ -55,5 +56,66 @@
             display: flex;
             padding-right: 1rem;
          }
+/* medias query */
+
+@media  screen and (max-width: 769px) {
+      header #btn-plus{
+         margin-right:1rem;
+      }
+      header{
+         display:flex;
+      }
+         header{
+            width:100%
+            padding:0rem;
+         }
+         header ul  {
+            position: relative;
+            right:4%; 
+         }
+         #btn-con-insc{
+            position: relative;
+            right:5%;
+         }
+      }
+      @media screen and (min-width : 500px and max-width : 768px  ) {
+         header #btn-plus{
+         margin-left:5rem;
+      }
+     
+      header .lien-vide, header ul li {
+            display:block;
+            margin-left:20rem;
+         }
+      }
+      @media  screen and (max-width: 500px) {
+         header #btn-plus{
+         position: absolute;
+         left:60%;
+         }
+         header .lien-vide, header ul li {
+            display:none;
+         }
+         #btn-con-insc{
+            position:absolute;
+            left:65%
+         }
+     }
+     @media  screen and (max-width: 375px) {
+      #btn-con-insc{
+            position:absolute;
+            left:60%
+         }
+     }
+     @media  screen and (max-width: 326px) {
+         header #btn-plus{
+         position: absolute;
+         left:50%;
+         }
+         #btn-con-insc{
+            position:absolute;
+            left:50%
+         }
+     }
 
 </style>

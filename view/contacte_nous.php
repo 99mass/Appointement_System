@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/styles.css">
+    <link rel="stylesheet" href="../view/css/styleses.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <!-- <link rel="stylesheet" href="../view/css/styledasboards.css"> -->
-    <link rel="stylesheet" href="../view/css/style_contact_nous.css">
+    <link rel="stylesheet" href="../view/css/style_infos.css">
 
 </head>
     <body>

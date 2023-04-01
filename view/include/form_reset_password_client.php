@@ -15,7 +15,7 @@
                 </div>
                 <button type="submit"   id="but" class="btn btn-success btn-valider-connexion">Valider</button>
             </form>
-        </div>reset_password_client.php
+        </div>
         <div class="image-form">
             <h1>Avec Appointment system <br>finit les problémes de gestions de rendez vous </h1>
         </div>

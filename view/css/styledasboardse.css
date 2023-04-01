@@ -16,9 +16,7 @@ body {
     top: 5.9rem;
     padding-top: 2rem;
 }
-/* .main .section .grid-max{
-    justify-content: space-evenly;
-} */
+
 .main .section .grid-max #section-child1,
 .main .section .grid-max #section-child2{
     height: auto;
@@ -47,17 +45,22 @@ body {
 .main .section .grid-max #section-child1 .conten-rv #menu_avant_liste_rv{
     display: flex;
     justify-content: space-between;
-    padding: 0rem 1%;
+    width: 100%;
+    position: relative;
    
 }
 #div1{
-  width:30%
+  width:100%;
+  padding-left: 1%;
+ text-align: left;
 }
  #content-lien{
-    padding: 0.2em 1rem;
+    padding: 0.2em 0rem;
+    margin-right: 1%;
+   
     border: 1px solid gray;
       box-shadow: 1px 1px 5px inset gainsboro;
-    width:auto;
+    /* width:50%; */
     float:right;
     margin-top: -2.2rem;
     text-align: end;
@@ -172,9 +175,11 @@ margin-bottom: 1rem;
 }
 #section-child1 h3{
   display: flex;
-  justify-content: space-between;
   padding: 0px 3rem;
+  color: blueviolet;
 }
+
+
 #section-child1 h3 span,
 #section-child1 h3  i{
 margin: 0px 2re ;
@@ -182,7 +187,12 @@ margin: 0px 2re ;
 
 
 
-/* formulaire demadeur de rendez-vous */
+
+
+
+/***********
+   formulaire demadeur de rendez-vous
+                                      ******* */
 * {
   margin: 0;
   padding: 0;
@@ -300,55 +310,45 @@ fieldset {
 
 :-ms-input-placeholder {
   color: #888;
+  ;
 }
-
+#lien{
+  display: none;
+}
 
 
 @media screen and (max-width : 768px) {
 body .main{
-  margin-bottom: 60%;
+  margin-bottom: 100%;
+}
+.main .section{
+  position: relative;
+  top: 3rem;
+  padding-top: 1.5rem;
 }
 .main #section-child1 #div_table{
   overflow-x: scroll;
   margin-bottom: 3rem;
 }
 .main #section-child1 #div_table table th{
-   font-size: 12px;
+   font-size: 13px;
 }
 .main #section-child1 #div_table table tr td{
-  font-size: 10.5px;
+  font-size: 11px;
 }
 .main .section .grid-max #section-child1 .conten-rv #menu_avant_liste_rv{
-  display: block;
   padding: 0rem 1%;
   position: relative;
   overflow: hidden;
-
-  
-}
-#div1{
-  width: 100%;
-  font-size: 12px;
 }
 #content-lien{
-  width: 99.9%;
-  position: relative;
-  box-sizing: border-box;
-  font-size: x-small;
-  float: none;
-  margin-top: 1rem;
-  padding: 0rem 0rem;
-  margin-right: 3rem;
-  text-align: left;
-
-}
-#iconCopy{
-  margin-top: -1rem;
- float: right;
-}
-#content-lien i{
-  display: block;
-}
+ font-size: small;
+  margin-top: -2rem;
 }
 
+.containers {
+  max-width: 80%;
+  margin-left: 8%;
+}
+}
 

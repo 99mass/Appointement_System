@@ -133,5 +133,29 @@
     .autres{
         display:none;
     }
+    @media screen and (max-width : 768px) {
+        #formulair .modal-body .btn-exit{
+        text-align: end;
+        }
+        #formulair .modal-body .btn-exit .btn-close
+        {
+        position: relative;
+        top: 0rem;
+        left: 0rem;
+        }
+    .main #formulair .modal-body .body-form .div-multi-forms h5 i{
+    margin:0rem 0.5rem;
+
+}
+    .main #formulair .modal-body .body-form .div-multi-forms .form_1,
+    .main #formulair .modal-body .body-form .div-multi-forms .form_2{
+        padding-left: 0rem;
+        margin-left:-4rem;
+    }
+    .main #formulair .modal-body .body-form .div-multi-forms .form_2 .input-group,
+.main #formulair .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
+    width: 70%;
+}
+}
 </style>
 

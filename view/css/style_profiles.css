@@ -1,7 +1,7 @@
     /* Style pour le titre */
-    h2 {
+    /* h2 {
     text-align: center;
-    }
+    } */
 
     /* Style pour le formulaire */
     form {
@@ -62,12 +62,22 @@
     #footer{
         margin-top: -15rem;
     }
-
+    h2{
+        text-align: left;
+        color: blueviolet;
+    }
 
     /* Medias query */
     @media screen and (max-width : 768px) {
         body .main{
           margin-bottom: 100%;
+        }
+        .main nav{
+            display: none;
+        }
+     .containe{
+            position: relative;
+            top: 6rem; 
         }
     .ligne{
         display:block;

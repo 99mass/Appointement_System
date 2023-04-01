@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <!-- include css personnel -->
-     <link rel="stylesheet" href="../view/css/style_form_applicant.css">
-    <link rel="stylesheet" href="../view/css/styledasboards.css">
+     <link rel="stylesheet" href="../view/css/style_form_applicantes.css">
+    <link rel="stylesheet" href="../view/css/styledasboardse.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>

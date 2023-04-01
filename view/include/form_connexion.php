@@ -7,7 +7,7 @@
       <div class="body-form">
         <div class="contenu-form">
             <h4  id="staticBackdropLabel">Bienvenue sur Appointment system ! Veuillez vous connecter </h4>
-            <p> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></p>
+            <div> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></div>
             <form action="../model/connexion.php"  method="post"  class="input-form">
                 <div class="form-floating">
                     <input type="text" name="login" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -31,3 +31,12 @@
   </div>
 </div>
 <!-- Fin Modal Button Connexion -->
+
+
+<style>
+   @media  screen and (max-width: 426px) {
+      .image-form h1{
+        font-size:2rem;
+      }
+   }
+</style>

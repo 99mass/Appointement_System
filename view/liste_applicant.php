@@ -23,13 +23,21 @@ if(empty($_SESSION['user'])  ){
     <style>
         th{
             text-transform: capitalize;
-            /* font-size: 1.1rem; */
         }
         .contai{
             width: auto;
-            /* margin: 0% 5%; */
             overflow-x:scroll;
             padding-top:8rem
+        }
+        @media screen and (max-width: 426px) {
+            .contai{
+                margin-bottom:100%;
+            }
+        }
+        @media screen and (max-width: 426px) {
+            #btn-export{
+                margin-bottom:1rem;
+            }
         }
     </style>
 </head>
@@ -43,13 +51,12 @@ if(empty($_SESSION['user'])  ){
                 ?>
 
                 <div  class="container contai" >
-               
                     <div id="section-child2" class="g-col-6 ">
                     <?php    if (count($listes)<=0) { ?>
                          <table class="table table-hover" >
                     <?php } else{?>
                         <div class="col-md-12 head">
-                            <div class="text-center">
+                            <div id="btn-export" class="text-center ">
                                 <a href="../model/exportData.php?id=<?=$id?>" class="btn btn-success"><i class="fa-solid fa-download"></i> Exporter</a>
                             </div>
                         </div>

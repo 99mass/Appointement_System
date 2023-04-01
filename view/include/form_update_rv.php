@@ -57,6 +57,31 @@ margin-bottom: 1rem;
     margin: 1.5rem 0rem 0rem 2rem;
     font-size: 1rem;
 }
+
+
+@media screen and (max-width : 768px) {
+    .main .formulair_modification2 .modal-body .btn-exit .btn-close{
+        position: relative;
+        top: -0.5rem;
+        left: 50%;
+        color: white;
+        background-color: none;
+       
+    }
+    .main .formulair_modification2 .modal-body .body-form .div-multi-forms h5 i{
+    margin:0rem 0.5rem;
+
+}
+    .main .formulair_modification2 .modal-body .body-form .div-multi-forms .form_1,
+    .main .formulair_modification2 .modal-body .body-form .div-multi-forms .form_2{
+        padding-left: 0rem;
+        margin-left:-4rem;
+    }
+    .main .formulair_modification2 .modal-body .body-form .div-multi-forms .form_2 .input-group,
+.main .formulair_modification2 .modal-body .body-form .div-multi-forms .conten-form-check .input-group {
+    width: 70%;
+}
+}
 </style>
  
  

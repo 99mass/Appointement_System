@@ -13,14 +13,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <!-- include css personnel -->
-     <link rel="stylesheet" href="../view/css/style_form_applicant.css">
-    <link rel="stylesheet" href="../view/css/styledasboardes.css">
+     <link rel="stylesheet" href="../view/css/style_form_applicantes.css">
+    <link rel="stylesheet" href="../view/css/styledasboardse.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
     <?php if(empty($_SESSION['user'])){?>
     <style>
-         
+         #div_table{
+            margin: 0% 20%;
+            border:2px solid gray;
+            /* width:100%; */
+            box-sizing: border-box;
+         }
+         h3{
+            margin-top:5%;
+            margin-left: 16%;
+         }
         /* #containers{
             display:block;
         } */
@@ -38,8 +47,26 @@
         width: 50%;
         margin-left: 25%;
         }
-        
-        @media screen and (max-width : 768px) {
+        @media screen and (max-width : 1024px) {
+            #div_table{
+            overflow-x: hidden;
+            }
+        }
+        @media screen and (max-width : 769px) {
+            #div_table{
+            margin: 0% 0%;
+            border:none;
+            width:38rem;
+            box-sizing: border-box;
+            
+         }
+         #div_table table th{
+            font-size: 1rem;
+         }
+         h3{
+            margin-top:-90%;
+            margin-left: 16%;
+         }
         .main .section .grid-max #section-child1{
         width: 100%;
         margin:0% 2%;
@@ -49,7 +76,22 @@
             display: none;
         }
         }
-    
+        @media screen and (max-width : 426px) {
+            #div_table{
+            border:none;
+            width:38rem;
+            overflow-x: scroll;
+            }
+            h3{
+            margin-left: 0%;
+         }
+        }
+
+        @media screen and (max-width : 320px) {
+            h3{
+            margin-left: -2rem;
+         }
+        }
     </style>
     <?php }?>
 </head>
@@ -62,16 +104,16 @@
                 
 
                     <div id="section-child1" class="g-col-6 mt-4">
-                        <h3 >listes rendez-vous <?= empty($_GET['mess']) ? '' : $_GET['name'] ?> </h3>
+                        <h3 ><i class="fa-sharp fa-solid fa-list mx-2"></i>listes rendez-vous <?= empty($_GET['mess']) ? '' : $_GET['name'] ?> </h3>
                         <div class="conten-rv">
                         <?php if(!empty($_SESSION['user'])){?>
                                 <p id="menu_avant_liste_rv" class="cacher_appli" >
                                     <div id="div1" >
-                                        Cliquez sur
-                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair">Nouveau RV</button>                                       
-                                        pour crèer un rendez-vous.
+                                        <!-- Cliquez sur -->
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair"><i class="fa-solid fa-calendar-check me-2"></i>Nouveau RV</button>                                       
+                                        <!-- pour crèer un rendez-vous. -->
                                     </div> 
-                                    <div id="content-lien" class="pt-1" > <span id="lien">?id_rv_get=<?$_SESSION['user']['id']?>&name=<?$_GET['name']?></span> <i id="iconCopy" class="fa-solid fa-copy fs-5 text-success ml-1 "></i><span id="copy1">copier lien</span><span id="copy2">copier</span></div>
+                                    <div id="content-lien" class="pt-1" > <span id="lien">?id_rv_get=<?$_SESSION['user']['id']?>&name=<?$_GET['name']?></span> <span id="indication-lien">copier le lien</span> <i id="iconCopy" class="fa-solid fa-copy fs-5 text-success ml-1 "></i><span id="copy1">copier lien</span><span id="copy2">copier</span></div>
                                 </p>
                                 <?php }?>
                                <?php //include modal
