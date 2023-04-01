@@ -25,7 +25,7 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
                 $_SESSION['erreur']="Email incorect.";
                 header("Location: ../view/index.php");
         }else{
-        $password_hashed=password_hash($password,PASSWORD_ARGON2ID);   
+        $password_hashed=password_hash($password,PASSWORD_DEFAULT);   
         $sql="INSERT INTO client(id,nom_entreprise_ou_user,domaine,pays,email,mot_de_passe,roles)
                 VALUES(null,:nom,:dom,:pay,:mail,:motpass,'EN')";
             $query=$db->prepare($sql);

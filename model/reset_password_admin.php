@@ -41,7 +41,7 @@ if (isset($mail_user)) {
                     "email"=>$user["email"]
                 ];
 
-            header("Location: ../view/newPassword.php");
+            header("Location: ../view/newPassword_admin.php");
             }
             
         }

@@ -42,6 +42,16 @@ else if(isset($_SESSION['success'])){  ?>
                 })
             </script>
 <?php unset($_SESSION['erreur1']);  } ?>
+<?php if (isset($_SESSION['erreur11'])) {  ?>
+            <script>
+                Swal.fire({
+                  title: '<?php echo $_SESSION['erreur11']?>',
+                  text: 'Veilleiz réessayer svp !',
+                  icon: 'error',
+                  confirmButtonText: '<a type="button" id="btn-inscript" href="../view/admin.php" class="btn text-white " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Se connecter</a>'
+                })
+            </script>
+<?php unset($_SESSION['erreur11']);  } ?>
 
 <?php if(isset($_SESSION['erreur3'])){  ?>
        <script>

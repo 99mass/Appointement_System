@@ -10,7 +10,7 @@ if(empty($_SESSION['admin'])  ){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/styleses.css">
+    <link rel="stylesheet" href="../view/css/style.css">
     <link rel="stylesheet" href="../view/css/style_admin.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
@@ -31,7 +31,10 @@ if(empty($_SESSION['admin'])  ){
          <!--Debut header  -->
       <?php require_once("../view/include/header_admin.php"); ?>
       <!-- appel du fichier pour liste l'ensemble des client -->
-      <?php require_once("../model/read_client.php")  ?>
+      <?php require_once("../model/read_client.php") ; 
+       require_once("../model/read_message.php") ; 
+            require_once ("../view/include/form_delete_client.php"); 
+      ?>
                     <div class="container-fluid px-4 pt-5 " >
                         <h1 class="mt-5 mb-3"><i class="fa-solid fa-gauge me-2"></i>Tableau de Bord</h1>
                         <div class="row">
@@ -47,7 +50,7 @@ if(empty($_SESSION['admin'])  ){
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body fs-3"><i class="fa-solid fa-circle-question m-2"></i>Question</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">                                       
-                                        <div class=" pl-5 "><a href="#" class="text-white"><i class="fa-solid fa-diamond-turn-right me-2 text-black fs-4"></i>67756</a></div>
+                                        <div class=" pl-5 "><a href="../view/repond_message.php" class="text-white"><i class="fa-solid fa-diamond-turn-right me-2 text-black fs-4"></i><?= count($message)-1 ?></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +100,7 @@ if(empty($_SESSION['admin'])  ){
                                             <td><?= $cli["email"] ?></td>
                                             <td class="cel-action">
                                               <a  href="../view/update_client.php?id=<?=$cli["id"]?>" type="button" class="btn btn-primary me-1 "  data-toggle="tooltip" data-placement="bottom" title="Modifier"  ><i class="fa-regular fa-pen-to-square"></i></a>
-                                              <button type="button" class="btn btn-danger me-1  "  data-toggle="tooltip" data-placement="bottom" title="Supprimer"  ><i class="fa-solid fa-trash"></i></button>
+                                              <button type="button" class="btn btn-danger me-1 " data-bs-toggle="modal" data-bs-target="#delete_client<?= $cli["id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Supprimer"  ><i class="fa-solid fa-trash"></i></button>
                                             </td>
                                         </tr> 
                                         <?php } } } ?>                                     

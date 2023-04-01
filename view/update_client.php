@@ -9,11 +9,11 @@ if(empty($_SESSION['admin'])  ){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/styles.css">
+    <link rel="stylesheet" href="../view/css/style.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
-    <link rel="stylesheet" href="../view/css/style_contact_nous.css">
-    <link rel="stylesheet" href="../view/css/style_profile.css">
+    <link rel="stylesheet" href="../view/css/style_infos.css">
+    <link rel="stylesheet" href="../view/css/style_profiles.css">
      <!--Includes Cdn Css -->
      <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>

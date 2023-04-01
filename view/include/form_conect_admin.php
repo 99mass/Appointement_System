@@ -21,7 +21,7 @@
                 <div><a  href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">mot de passe oublié ?</a></div>
             </form>
         </div>
-        <div class="image-form">
+        <div id="image_form" class="image-form">
             <h1>Avec Appointment system <br>finit les problémes de gestions de rendez vous </h1>
         </div>
      </div> 
@@ -31,3 +31,72 @@
   </div>
 </div>
 <!-- Fin Modal Button Connexion -->
+<style>
+   @media  screen and (max-width: 769px) {
+    .contenu-form .form-floating{
+        margin-left:-1.7rem;
+      }
+      #staticBackdrop2 .modal-body{
+        height: 33rem;
+      }
+  #staticBackdrop2 .modal-body .body-form  #image_form {
+  height: 33.2rem;
+    }
+   }
+   @media  screen and (max-width: 426px) {
+    #staticBackdrop2 .modal-body .body-form #staticBackdropLabel,
+    #staticBackdrop2 .modal-body .body-form p{
+      width:22rem;
+    }
+    #staticBackdrop2 .modal-body{
+        height: 26rem;
+      }
+    #staticBackdrop2 .modal-body .body-form  #image_form {
+      display:none;
+    }
+    #staticBackdrop2 .modal-body .body-form  .input-form
+    {
+      width:20rem;
+    }
+    #staticBackdrop2 .modal-body .body-form{
+  display: block;
+}
+      .image-form h1{
+        font-size:2rem;
+      }
+      .contenu-form .form-floating{
+        margin-left:-1.5rem;
+       
+      }
+      .contenu-form .form-floating input{
+        width:100%;
+      }
+   }
+   @media  screen and (max-width: 375px) {
+    #staticBackdrop2 .modal-body .body-form #staticBackdropLabel,
+    #staticBackdrop2 .modal-body .body-form p{
+      width:21rem;
+    }
+    #staticBackdrop2 .modal-body .body-form  .input-form
+    {
+      width:17rem;
+    }
+    .image-form h1{
+        font-size:1.7rem;
+      }
+   }
+
+   @media  screen and (max-width: 320px) {
+    #staticBackdrop2 .modal-body .body-form #staticBackdropLabel,
+    #staticBackdrop2 .modal-body .body-form p{
+      width:18rem;
+    }
+    #staticBackdrop2 .modal-body{
+        height: 28rem;
+      }
+  #staticBackdrop2 .modal-body .body-form  .input-form
+    {
+      width:14rem;
+    }
+      }
+</style>

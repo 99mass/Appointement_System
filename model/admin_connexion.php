@@ -13,7 +13,7 @@ if (isset($login) && isset($password)) {
 
     //on verifie si les champs sont  vide
     if (empty($login) || empty($password)) {
-        $_SESSION['erreur1']="E-mail et/ou Mot de passe Incorrect.";
+        $_SESSION['erreur11']="E-mail et/ou Mot de passe Incorrect. 1";
         header("Location: ../view/admin.php");
     }
         $sql="SELECT * FROM admins WHERE email=:mail  ";
@@ -23,34 +23,34 @@ if (isset($login) && isset($password)) {
             // Exécution de la requête
             $query->execute();
             $admin=$query->fetch(PDO::FETCH_ASSOC);
-            $passDb= $admin['password_admin'];
+            $passDb= $admin["password_admin"];
             // on verifie si on a ce compte dans la base de donné 
             if (empty($passDb)) {
-                $_SESSION['erreur1']="E-mail et/ou Mot de passe Incorrect.";
+                $_SESSION['erreur11']="E-mail et/ou Mot de passe Incorrect. 2";
                 
                 header("Location: ../view/admin.php");
-            }
-            // on verifie si le mot donne est identique a celui stocker a la base de donné
-            if (!password_verify($password,$passDb)) {
-                    $_SESSION['erreur1']="E-mail et/ou Mot de passe Incorrect.";
-                    header("Location: ../view/admin.php");
-            } else{
-                //on stocke les informations de l'utlisateur dans variable super global $_SESSION
-                $_SESSION['admin']=[
-                    "id"=>$admin["id"],
-                    "prenom"=>$admin["prenom"],
-                    "nom"=>$admin["nom"],
-                    "email"=>$admin["email"]
-                ];
-                // si le compte exite on le redirie vers sa page de profile
-                header("Location: ../view/dasboard_admin.php");
-                
-            }
+            }else{
+                // on verifie si le mot donne est identique a celui stocker a la base de donné
+                if (!password_verify($password,$passDb)) {
+                        $_SESSION['erreur11']="E-mail et/ou Mot de passe Incorrect. 3";
+                        header("Location: ../view/admin.php");
+                } else{
+                    //on stocke les informations de l'utlisateur dans variable super global $_SESSION
+                    $_SESSION['admin']=[
+                        "id"=>$admin["id"],
+                        "prenom"=>$admin["prenom"],
+                        "nom"=>$admin["nom"],
+                        "email"=>$admin["email"]
+                    ];
+                    // si le compte exite on le redirie vers sa page de profile
+                    header("Location: ../view/dasboard_admin.php");
+                } 
+         }
 
 
 }
  // fermer la connexion à la base de données
- $db->close();
+//  $db->close();
 
 ?>
 

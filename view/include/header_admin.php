@@ -58,6 +58,12 @@
          }
 /* medias query */
 
+@media  screen and (max-width: 1024px) {
+   #btn-con-insc{
+      padding-right:7rem; 
+   }
+
+}
 @media  screen and (max-width: 769px) {
       header #btn-plus{
          margin-right:1rem;
@@ -75,7 +81,7 @@
          }
          #btn-con-insc{
             position: relative;
-            right:5%;
+            right:-3%;
          }
       }
       @media screen and (min-width : 500px and max-width : 768px  ) {
@@ -101,6 +107,9 @@
             left:65%
          }
      }
+     @media  screen and (max-width: 500px) {
+
+     }
      @media  screen and (max-width: 375px) {
       #btn-con-insc{
             position:absolute;
@@ -110,7 +119,7 @@
      @media  screen and (max-width: 326px) {
          header #btn-plus{
          position: absolute;
-         left:50%;
+         left:65%;
          }
          #btn-con-insc{
             position:absolute;

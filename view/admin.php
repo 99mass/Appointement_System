@@ -5,10 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/styleses.css">
+    <link rel="stylesheet" href="../view/css/style.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
+    <style>
+        #section_texte{
+          margin-top: 10rem; 
+        }
+        @media screen and (max-width: 769px) {
+          #section_texte{
+          margin-top: 6rem; 
+        }
+        }
+    </style>
 </head>
 <body>
    <div class="main">

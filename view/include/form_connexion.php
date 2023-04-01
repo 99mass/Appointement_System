@@ -5,9 +5,9 @@
       <div class="modal-body">
         <div class="btn-exit"><button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button></div>
       <div class="body-form">
-        <div class="contenu-form">
+        <div id="contenu-form" class="contenu-form">
             <h4  id="staticBackdropLabel">Bienvenue sur Appointment system ! Veuillez vous connecter </h4>
-            <div> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></div>
+            <div id="texte"> Nouveau sur Appointment System ?<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Créez un compte</a></div>
             <form action="../model/connexion.php"  method="post"  class="input-form">
                 <div class="form-floating">
                     <input type="text" name="login" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -21,7 +21,7 @@
                 <div><a  href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">mot de passe oublié ?</a></div>
             </form>
         </div>
-        <div class="image-form">
+        <div id="image_form" class="image-form">
             <h1>Avec Appointment system <br>finit les problémes de gestions de rendez vous </h1>
         </div>
      </div> 
@@ -34,9 +34,78 @@
 
 
 <style>
+
    @media  screen and (max-width: 426px) {
       .image-form h1{
         font-size:2rem;
       }
+     
    }
+   @media  screen and (max-width: 769px) {
+    .contenu-form .form-floating{
+        margin-left:-1.7rem;
+      }
+      #staticBackdrop2 .modal-body{
+        height: 33rem;
+      }
+  #staticBackdrop2 .modal-body .body-form  #image_form {
+  height: 33.2rem;
+    }
+   }
+   @media  screen and (max-width: 426px) {
+    #staticBackdrop2 .modal-body .body-form #staticBackdropLabel,
+    #staticBackdrop2 .modal-body .body-form #texte{
+      width:23rem;
+    }
+    #staticBackdrop2 .modal-body{
+        height: 26rem;
+      }
+    #staticBackdrop2 .modal-body .body-form  #image_form {
+      display:none;
+    }
+    #staticBackdrop2 .modal-body .body-form  .input-form
+    {
+      width:20rem;
+    }
+    #staticBackdrop2 .modal-body .body-form{
+  display: block;
+}
+      .image-form h1{
+        font-size:2rem;
+      }
+      .contenu-form .form-floating{
+        margin-left:-1.5rem;
+       
+      }
+      .contenu-form .form-floating input{
+        width:100%;
+      }
+   }
+   @media  screen and (max-width: 375px) {
+    #staticBackdrop2 .modal-body .body-form #staticBackdropLabel,
+    #staticBackdrop2 .modal-body .body-form #texte{
+      width:21rem;
+    }
+    #staticBackdrop2 .modal-body .body-form  .input-form
+    {
+      width:17rem;
+    }
+    .image-form h1{
+        font-size:1.7rem;
+      }
+   }
+
+   @media  screen and (max-width: 320px) {
+    #staticBackdrop2 .modal-body .body-form #staticBackdropLabel,
+    #staticBackdrop2 .modal-body .body-form #texte{
+      width:18rem;
+    }
+    #staticBackdrop2 .modal-body{
+        height: 30rem;
+      }
+  #staticBackdrop2 .modal-body .body-form  .input-form
+    {
+      width:14rem;
+    }
+      }
 </style>

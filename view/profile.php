@@ -9,7 +9,7 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/styles.css">
+    <link rel="stylesheet" href="../view/css/style.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <link rel="stylesheet" href="../view/css/style_contact_nous.css">

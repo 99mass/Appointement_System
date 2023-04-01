@@ -60,6 +60,20 @@
             color:blue;
          }
    /* medias query */
+   
+   @media  screen and (min-width: 2560px) {
+      #btn-con-insc{
+      position: relative;
+            right:-5%;
+   }
+   }
+   @media  screen and (max-width: 1024px) {
+   #btn-con-insc{
+      position: relative;
+            right:5%;
+   }
+
+}
 
    @media  screen and (max-width: 769px) {
       header #btn-plus{
@@ -78,7 +92,7 @@
          }
          #btn-con-insc{
             position: relative;
-            right:15%;
+            right:12%;
          }
       }
       @media screen and (min-width : 500px and max-width : 768px  ) {
