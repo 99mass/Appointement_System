@@ -12,16 +12,12 @@
             </div>
                <!-- <button type="button" id="btn-inscript" href="../page_definition_rv.php" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button> -->
             <?php }else{ ?>
-                  <!-- <div class="col-md-1 text-end bouton me-4 ">
-                <a type="button" id="btn-decon" href="../model/deconnexion.php" class="btn btn-primary ml-2 " >Se déconnecter</a> -->
-                <div id="btn-plus" class="btn-group col-md-1 text-end bouton me-4">
+                <div id="btn-plus" class="btn-group col-md-1 text-end bouton me-0">
                   <button type="button" id="btn-decon" class="btn btn-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Plus
                   </button>
                   <div class="dropdown-menu">
-                     <!-- <a class="dropdown-item" href="../view/profile.php"><i class="fa-solid fa-user me-1"></i>Profile</a> -->
-                     <!-- <a class="dropdown-item" href="#"><i class="fa-solid fa-question me-1" ></i>Question</a> -->
-                     <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"></div>
                      <a  class="dropdown-item" href="../model/deconnexion_admin.php"  style="text-decoration:none;boder:none,text-align:center" ><i class="fa-solid fa-lock me-1"></i>Se déconnecter</a> 
                   </div>
             <?php }?>
@@ -66,7 +62,7 @@
 }
 @media  screen and (max-width: 769px) {
       header #btn-plus{
-         margin-right:1rem;
+         padding-right:4rem;
       }
       header{
          display:flex;
@@ -107,20 +103,24 @@
             left:65%
          }
      }
-     @media  screen and (max-width: 500px) {
-
+     @media  screen and (max-width: 426px) {
+      header #btn-plus{
+         margin-left:4rem;
+      }
      }
      @media  screen and (max-width: 375px) {
       #btn-con-insc{
             position:absolute;
             left:60%
          }
+         header #btn-plus{
+         margin-left:3rem;
+      }
      }
      @media  screen and (max-width: 326px) {
          header #btn-plus{
-         position: absolute;
-         left:65%;
-         }
+         margin-left:2rem;
+      }
          #btn-con-insc{
             position:absolute;
             left:50%

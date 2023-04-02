@@ -1,6 +1,5 @@
 
 <style>
-
 .main .formulair_modification2 .modal-body .btn-exitt{
   text-align: end;
 }

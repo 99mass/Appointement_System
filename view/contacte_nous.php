@@ -61,7 +61,7 @@
     <script>
         window.onload=()=>{
             Swal.fire({
-                  title: 'Message envoye avec succe.',
+                  title: 'Message envoye.',
                 text: 'Votre requte sera traiter sous peu de temps. Merci a tres bientot.',
                 icon: 'success',
                   confirmButtonText: '<a  href="../view/contacte_nous.php" class="btn text-white " >OK</a>'
