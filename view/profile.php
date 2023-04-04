@@ -12,12 +12,16 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
     <link rel="stylesheet" href="../view/css/style.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
-    <link rel="stylesheet" href="../view/css/style_contact_nous.css">
+    <link rel="stylesheet" href="../view/css/style_profiles.css">
     <link rel="stylesheet" href="../view/css/style_profiles.css">
      <!--Includes Cdn Css -->
      <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
-    
+    <style>
+        .containe{
+            padding-top:10%;
+        }
+    </style>
 </head>
     <body>
    

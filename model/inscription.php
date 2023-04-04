@@ -26,8 +26,8 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
                 header("Location: ../view/index.php");
         }else{
         $password_hashed=password_hash($password,PASSWORD_DEFAULT);   
-        $sql="INSERT INTO client(id,nom_entreprise_ou_user,domaine,pays,email,mot_de_passe,roles)
-                VALUES(null,:nom,:dom,:pay,:mail,:motpass,'EN')";
+        $sql="INSERT INTO client(`id`,`nom_entreprise_ou_user`,`domaine`,`pays`,`email`,`mot_de_passe`)
+                VALUES(null,:nom,:dom,:pay,:mail,:motpass)";
             $query=$db->prepare($sql);
             // Ajout des données protégées
             $query->bindParam(":nom",$nom_entreprise_or_utilisaterur);
@@ -42,16 +42,18 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
                   //on stocke les informations de l'utlisateur dans variable super global $_SESSION
                 $_SESSION['user']=[
                     "id"=>$id,
-                    "nom_entreprise_ou_user"=>$user["nom_entreprise_ou_user"],
-                    "domaine"=>$user["domaine"],
-                    "pays"=>$user["pays"],
-                    "email"=>$user["email"],
-                     "roles"=>$user["roles"]
+                    "nom_entreprise_ou_user"=>$nom_entreprise_or_utilisaterur,
+                    "domaine"=>$domaine,
+                    "pays"=>$pays,
+                    "email"=>$mail
                 ];
                 $sessionId=$_SESSION['user']['id'];
-                $nom_entreprise_ou_user=$_SESSION['user']['nom_entreprise_ou_user'];
+                $nom_=$_SESSION['user']['nom_entreprise_ou_user'];
+                if (condition) {
+                    # code...
+                }
                 // si le compte exite on le redirie vers sa page de profile
-                header("Location: ../view/dasboard.php?id_rv_get=$sessionId&name=$nom_entreprise_ou_user");
+                header("Location: ../view/dasboard.php?id_rv_get=".$sessionId."&name=".$nom_);
             }
         }
      }
