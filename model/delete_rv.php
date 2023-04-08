@@ -1,6 +1,10 @@
 <?php 
 
 @session_start(); // on demare la session
+// empecher l'acces a ce fichier tempsqu'on est pas connecter
+if(empty($_SESSION['user'] ) ){
+  header("Location: ../view/index.php");
+} 
 
 $sessionId=$_SESSION['user']['id'];
   $nom_entreprise_ou_user=$_SESSION['user']['nom_entreprise_ou_user'];

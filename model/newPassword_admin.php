@@ -1,8 +1,10 @@
 <?php
 @session_start(); // on demare la session
 
-$sessionId=$_SESSION['user']['id'];
-$nom_entreprise_ou_user=$_SESSION['user']['nom_entreprise_ou_user'];
+// empecher l'acces a ce fichier tempsqu'on est pas connecter
+if( empty($_SESSION['admin'])  ){
+    header("Location: ../view/index.php");
+  } 
 // appele de la base donné
 require_once("../core/dbClient.php");
   

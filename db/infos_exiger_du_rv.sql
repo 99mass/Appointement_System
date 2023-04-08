@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 29 mars 2023 à 23:39
+-- Généré le : sam. 08 avr. 2023 à 20:26
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -39,6 +39,7 @@ CREATE TABLE `infos_exiger_du_rv` (
   `cni` varchar(255) NOT NULL,
   `mail` varchar(2) DEFAULT NULL,
   `heure_convocation` varchar(255) DEFAULT NULL,
+  `date_convocation` date DEFAULT NULL,
   `date_debut` date DEFAULT NULL,
   `date_expiration` date DEFAULT NULL,
   `lieu_rv` varchar(255) NOT NULL,
@@ -60,13 +61,10 @@ CREATE TABLE `infos_exiger_du_rv` (
 -- Déchargement des données de la table `infos_exiger_du_rv`
 --
 
-INSERT INTO `infos_exiger_du_rv` (`id`, `id_rv`, `prenom`, `nom`, `date_de_naissance`, `lieu_de_naissance`, `genre`, `pays`, `cni`, `mail`, `heure_convocation`, `date_debut`, `date_expiration`, `lieu_rv`, `total_places`, `acces`, `autre1`, `autre2`, `autre3`, `autre4`, `autre5`, `autre6`, `autre7`, `autre8`, `autre9`, `autre10`) VALUES
-(3, 3, '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', 0, 0, '', '', '', '', '', '', '', '', '', ''),
-(143, 10, '1', '1', '1', '1', '1', '0', '0', '1', '23:30', '2023-03-23', '2023-04-08', 'Dakar', 432, 1, '', '', '', '', '', '', '', '', '', ''),
-(144, 8, '1', '1', '1', '1', '1', '1', '1', '1', '10:00', '2023-03-25', '2023-04-09', 'dakar', 200, 1, 'date_de_delivrance', '', '', '', '', '', '', '', '', ''),
-(145, 8, '1', '1', '', '', '', '', '', '1', '22:15', '2023-03-25', '2023-04-08', 'dakar', 1, 1, '', '', '', '', '', '', '', '', '', ''),
-(146, 12, '1', '1', '', '', '', '', '', '1', '20:00', '2023-03-29', '2023-04-09', 'saly', 23, 1, '', '', '', '', '', '', '', '', '', ''),
-(147, 12, '1', '1', '1', '1', '', '', '', '1', '11:27', '2023-03-16', '2023-04-09', 'paris', 45, 0, 'ville', '', '', '', '', '', '', '', '', '');
+INSERT INTO `infos_exiger_du_rv` (`id`, `id_rv`, `prenom`, `nom`, `date_de_naissance`, `lieu_de_naissance`, `genre`, `pays`, `cni`, `mail`, `heure_convocation`, `date_convocation`, `date_debut`, `date_expiration`, `lieu_rv`, `total_places`, `acces`, `autre1`, `autre2`, `autre3`, `autre4`, `autre5`, `autre6`, `autre7`, `autre8`, `autre9`, `autre10`) VALUES
+(3, 3, '', '', '', '', '', '', '', '', '', NULL, '0000-00-00', '0000-00-00', '', 0, 0, '', '', '', '', '', '', '', '', '', ''),
+(143, 10, '1', '1', '1', '1', '1', '0', '0', '1', '23:30', '2023-05-03', '2023-03-23', '2023-04-08', 'Dakar', 432, 1, '', '', '', '', '', '', '', '', '', ''),
+(153, 8, '1', '1', '0', '0', '0', '0', '0', '1', '14:30', '2023-05-11', '2023-04-07', '2023-05-07', 'Dakar', 25, 1, '', '', '', '', '', '', '', '', '', '');
 
 --
 -- Index pour les tables déchargées
@@ -87,7 +85,7 @@ ALTER TABLE `infos_exiger_du_rv`
 -- AUTO_INCREMENT pour la table `infos_exiger_du_rv`
 --
 ALTER TABLE `infos_exiger_du_rv`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- Contraintes pour les tables déchargées

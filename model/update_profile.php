@@ -1,5 +1,10 @@
 <?php
  @session_start(); //on demarr la session
+
+ // empecher l'acces a ce fichier tempsqu'on est pas connecter
+if(empty($_SESSION['user'] )|| empty($_SESSION['admin'])  ){
+    header("Location: ../view/index.php");
+  } 
 // appele de la base donné
 require_once("../core/dbClient.php");
 
@@ -35,7 +40,7 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
             if ($req->execute()!=false) {
                 // on choisit la page ou rediriger le client en cas la requete est traiter
                 if (!empty($_SESSION["user"])) {
-                    header("Location: ../view/profile.php?t");
+                    header("Location: ../view/profile.php?t&id_rv_get=$id&name=$nom_entreprise_or_utilisaterur");
                 }else  {
                     header("Location: ../view/dasboard_admin.php?t");
                 }

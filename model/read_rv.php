@@ -1,6 +1,8 @@
 <?php
 @session_start(); // on demare la session
 
+// empecher l'acces a ce fichier tempsqu'on est pas connecter
+
 
 // appele de la base donné
 require_once("../core/dbClient.php");

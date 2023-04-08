@@ -21,18 +21,16 @@ if(empty($_SESSION['user'])  ){
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
     <style>
+        thead{
+                background: lightcyan;
+            }
         th{
             text-transform: capitalize;
         }
         .contai{
-            width: auto;
+            width: 100%;
             overflow-x:scroll;
             padding-top:8rem
-        }
-        @media screen and (max-width: 426px) {
-            .contai{
-                margin-bottom:100%;
-            }
         }
         @media screen and (max-width: 426px) {
             #btn-export{
@@ -50,8 +48,8 @@ if(empty($_SESSION['user'])  ){
                  require_once("../model/read_applicant.php")
                 ?>
 
-                <div  class="container contai" >
-                    <div id="section-child2" class="g-col-6 ">
+                <div id="contais" class="container contai" >
+                    <div id="section-child2">
                     <?php    if (count($listes)<=0) { ?>
                          <table class="table table-hover" >
                     <?php } else{?>

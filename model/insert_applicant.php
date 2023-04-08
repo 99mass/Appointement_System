@@ -55,6 +55,12 @@ $info8=!isset($_POST["info8"]) || empty($_POST["info8"])? '' : htmlspecialchars(
 $info9=!isset($_POST["info9"]) || empty($_POST["info9"])? '' : htmlspecialchars(trim(strip_tags($_POST["info9"])));
 $info10=!isset($_POST["info10"]) || empty($_POST["info10"])? '' : htmlspecialchars(trim(strip_tags($_POST["info10"])));
 
+$sq="SELECT TIME_FORMAT(heure_convocation,'%Hh:%Imn') AS heure_convocations,DATE_FORMAT(date_convocation,'%d-%m-%Y') AS dateConvocation,lieu_rv FROM `infos_exiger_du_rv`
+    WHERE infos_exiger_du_rv.id=$id";
+$req = $db->prepare($sq);
+$req->execute();
+$res = $req->fetch(PDO::FETCH_ASSOC);
+
 $email =$mail;   
 // Envoie l'email de confirmation
 $to = $email;
@@ -63,8 +69,11 @@ $message = "<html>
             <body >
                 <p>Bonjour,</p>
                 <p>Felicitation votre place est maintenant garantie.</p>
-                <p>Voici votre code d'accès : <span style='background-color: #337ab7;color: #fff;font-size: larger;font-weight: bold;'>$code</span> </p>
+                <p>Voici votre code d'accès : <span style=' font-weight: bold;font-size: x-larger;font-weight: bold;'>$code</span> </p>
                 <p>Veillez ne pas supprimer cette E-mail, le code vous sera demader le jour-j.</p>
+                <p> <span style='color: dimgrey;text-decoration: underline; font-weight: bold;'>Date convocation :</span> ".$res['dateConvocation']."</p>
+                <p> <span style='color: dimgrey;text-decoration: underline; font-weight: bold;'>Heure convocation :</span> ".$res['heure_convocations']."</p>
+                <p> <span style='color: dimgrey;text-decoration: underline; font-weight: bold;'>Lieu :</span> ".$res['lieu_rv']."</p>
                 <p>Cordialement, L'équipe $nameStruct.</p>
             </body>
             </html>";

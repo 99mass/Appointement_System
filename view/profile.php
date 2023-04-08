@@ -106,11 +106,16 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
                Swal.fire({
                   title: 'Information modifier.',
                   icon: 'success',
-                  confirmButtonText: '<a  href="../view/profile.php" class="btn text-white " >OK</a>'
+                  confirmButtonText: '<a class="btn text-white " >OK</a>'
+                  
                 })
+                setTimeout(() => {
+                    history.back(); 
+                }, 1000); 
             }
         </script>
   <?php  }
+
    if(isset($_GET['f'])) { ?>
         <script>
               window.onload=()=>{
@@ -118,11 +123,16 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
                       title: 'Information non modifier.',
                       text: 'Veillez reessayer svp.',
                       icon: 'error',
-                      confirmButtonText: '<a  href="../view/profile.php" class="btn text-white " >OK</a>'
-                    })
+                      confirmButtonText: '<a class="btn text-white " >OK</a>'
+                })
+                setTimeout(() => {
+                    history.back(); 
+                }, 1000);
             }
         </script>
    <?php  } ?>
+
+
 
     </body>
 </html>

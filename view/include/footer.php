@@ -21,7 +21,7 @@
                     <div class="col-sm-4 col-md-3 item">
                         <h3>Nous contacter</h3>
                         <ul>
-                            <li><a href="mailto:sambadiop161@gmail.com" ><i class="fa-solid fa-envelope"></i> <span class="fs-6"> sambadiop161@gmail.com</span></a></li>
+                            <li><a href="mailto:sambadiop161@gmail.com" ><i class="fa-solid fa-envelope"></i> <span class="fs-6">globaladventurecode@gmail.com</span></a></li>
                             <li><a ><i class="fa-solid fa-phone-volume"></i> 771169551/704914548</a></li>
                             <li><a ><i class="fa-solid fa-fax"></i> 336751289</a></li>
                         </ul>

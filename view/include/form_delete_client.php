@@ -21,9 +21,9 @@
             <div class="modal-content">
                  <div class="modal-body">
                     <div class="btn-exit"><button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button></div>
-                       <div class="alert alert-danger" role="alert">
-                        êtes vous sûre de vouloir supprimer cet client ? <br>
-                       Notez que une fois supprimer on peut plus récupérer le client. <br>
+                       <div id="message" class="alert alert-danger" role="alert">
+                        Etes vous sûre de vouloir supprimer ce client ? <br>
+                        Notez que une fois que le client est supprimé on peut plus le récupéré. <br>
                         <div id="cont-btn">
                           <button type="button" onclick="resetAction();" class="btn btn-secondary text-black mt-3 me-1" >Non</button>
                           <form action="../model/delete_client.php" method="post">
@@ -52,6 +52,9 @@
   position: relative;
   top: -2rem;
   left: 3rem;
+ }
+ #message{
+  text-align:center;
  }
  #cont-btn{
     display: flex;

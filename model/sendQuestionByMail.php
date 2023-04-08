@@ -1,5 +1,10 @@
 <?php
 @session_start(); // on demare la session
+
+// empecher l'acces a ce fichier tempsqu'on est pas connecter
+if(empty($_SESSION['user'] )|| empty($_SESSION['admin'])  ){
+    header("Location: ../view/index.php");
+  } 
 $mail=htmlspecialchars(trim(strip_tags($_POST["mail"])));
 $reponse_admin=htmlspecialchars(trim(strip_tags($_POST["reponse_admin"])));
 

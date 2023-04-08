@@ -1,9 +1,9 @@
 
 <?php  @session_start(); //on demarr la session 
 
-// if(empty($_SESSION['user']) && empty($_GET['id_rv_get'])  ){
-//    header("Location: ../view/index.php");
-// }    
+if(empty($_GET['id_rv_get']) || empty($_GET['name']) ){
+   header("Location: ../view/index.php");
+}    
 ?>
 
 <!DOCTYPE html>
@@ -138,9 +138,7 @@
                         <?php if(!empty($_SESSION['user'])){?>
                                 <p id="menu_avant_liste_rv" class="cacher_appli" >
                                     <div id="div1" >
-                                        <!-- Cliquez sur -->
-                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair"><i class="fa-solid fa-calendar-check me-2"></i>Nouveau RV</button>                                       
-                                        <!-- pour crèer un rendez-vous. -->
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formulair"><i class="fa-solid fa-calendar-check me-2"></i>Nouveau RV</button>                                                                              
                                     </div> 
                                     <div id="content-lien" class="pt-1" > <span id="lien">?id_rv_get=<?$_SESSION['user']['id']?>&name=<?$_GET['name']?></span> <span id="indication-lien">copier le lien</span> <i id="iconCopy" class="fa-solid fa-copy fs-5 text-success ml-1 "></i><span id="copy1">copier lien</span><span id="copy2">copier</span></div>
                                 </p>
@@ -148,8 +146,7 @@
                                <?php //include modal
                                     require_once ("../view/include/forms_create_rv.php");
                                     require_once ("../view/include/form_update_rv.php"); 
-                                     require_once ("../view/include/form_delete_rv.php"); 
-                                     require_once "../model/read_rv.php";
+                                     require_once ("../view/include/form_delete_rv.php");                                    
                                 ?>
                                 <div id="div_table" >
                                 <!-- debut listes rendez vous creer -->
@@ -175,9 +172,7 @@
                                     <th colspan="2" class="info_applicant" >Choisir</th>
                                     <?php }?>
                                     </thead>
-                               <?php                                      
-                                    // require_once "../model/read_rv.php";
-                                       
+                               <?php               
                                     if (count($liste_rv)>0) { 
                                         if (count($liste_rv)==1) { ?>
                                           <tr > <td colspan="13" class="alert alert-warning py-5 "> Aucun rendez-vous trouver...</td></tr>
@@ -206,7 +201,7 @@
                                             <td colspan="1" class="cacher_applicant" style="display: flex;padding-bottom: 0.6em;">
                                                 <button type="button" class="btn btn-primary me-1 cacher_applicant" data-bs-toggle="modal" data-bs-target="#formulair_modification<?= $colonne["id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Modifier rendez-vous"  ><i class="fa-regular fa-pen-to-square"></i></button>
                                                 <button type="button" class="btn btn-danger me-1 cacher_applicant " data-bs-toggle="modal" data-bs-target="#delete_formulair<?= $colonne["id"]?>" data-toggle="tooltip" data-placement="bottom" title="Supprimer rendez-vous"  ><i class="fa-solid fa-trash"></i></button>
-                                                <a href="../view/liste_applicant.php?rv=<?= $colonne['id']?>" ><button type="button" class="btn btn-success cacher_applicant" data-toggle="tooltip" data-placement="bottom" title="Voir Perssones"><i class="fa-solid fa-users"></i></button></a> 
+                                                <a href="../view/liste_applicant.php?rv=<?= $colonne['id']?>&id_rv_get=<?= $_GET['id_rv_get']?>&name=<?= $_GET['name']?>" ><button type="button" class="btn btn-success cacher_applicant" data-toggle="tooltip" data-placement="bottom" title="Voir Perssones"><i class="fa-solid fa-users"></i></button></a> 
                                             </td> 
                                             <?php }?>
                                             <td colspan="5" class="cacher_applicant" >
@@ -232,7 +227,8 @@
                                         //  ici on gere le cas ou le rendez est definit comme visible par l'entreprise si il doit etre afficher 
                                          if($colonne["acces"]!=0){
                                             if($place_restant !=0 ){
-                                                if($colonne["dateConvocation"] != date("d-m-Y")){
+                                                // cacher le rendez-vous si la date de debut du rendez-vous est atteint ou le rendez n'est pas encore atteint
+                                                if($colonne["date_expirations"] != date("d-m-Y") && $colonne["date_debuts"] <= date("d-m-Y") ){
                                     ?>
                                     
                                         <tr>                             
@@ -242,8 +238,7 @@
                                             <td><?= $colonne["heure_convocations"]?></td>
                                             <td><?= $colonne["dateConvocation"]?></td>
                                             <td><?= $colonne["lieu_rv"]?></td>
-                                            <td><?=  $place_restant; ?></td> 
-                                             
+                                            <td><?=  $place_restant; ?></td>                                              
                                             <td  class="info_applicant"> 
                                                 <a href="../view/form.php?id_rv_get=<?= $_GET["id_rv_get"]?>&rv=<?= $colonne['id']?>&name=<?= $_GET['name'];?>">
                                                     <button type="button" class="btn" data-bs-toggle="modal"  data-toggle="tooltip" data-placement="bottom" title="reserver">
@@ -287,8 +282,8 @@
         }
     </script>
     <?php } 
-         if ( isset($_GET['m']) && $_GET['m']=='er'){ ?>
-        <script>
+         if ( isset($_GET['m']) && $_GET['m']=='er'){ ?>         
+    <script>
         window.onload=()=>{
             Swal.fire({
                   title: 'Inscription non reusit.',
@@ -300,7 +295,7 @@
      </script>
     <?php }  
          if ( isset($_GET['m']) && $_GET['m']=='erm'){ ?>
-        <script>
+     <script>
         window.onload=()=>{
             Swal.fire({
                   title: 'Inscription non reusit.',
@@ -314,7 +309,6 @@
 
         <!-- Include Cdn js -->
         <?php require_once ("../view/include/linkScripts.php") ?>
-
 
         <script>
             $(document).ready(function () {
