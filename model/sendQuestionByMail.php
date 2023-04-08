@@ -15,8 +15,8 @@ if (isset($mail) && isset($reponse_admin)) {
             $message = "<html>
                         <body >
                             <p>Bonjour,</p>
-                            <p>Nous avons recue votre Question. voici ci-dessous la Reponse.</p>
-                            <p  style='color: #337ab7;font-size: larger;font-weight: bold;'>$reponse_admin</p>
+                            <p>Nous avons reçue votre Question. voici ci-dessous la Reponse.</p>
+                            <p  style='color: #337ab7;font-size: larger;font-weight: bold;text-align:center'>$reponse_admin</p>
                             <p>Cordialement, L'équipe Global Adenture Code.</p>
                         </body>
                         </html>";

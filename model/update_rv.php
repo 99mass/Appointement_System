@@ -17,6 +17,7 @@ $pays=htmlspecialchars(trim(strip_tags($_POST["pays"])));
 $cni=htmlspecialchars(trim(strip_tags($_POST["cni"])));
 $mail=htmlspecialchars(trim(strip_tags($_POST["mail"])));
 $heure_convocation=htmlspecialchars(trim(strip_tags($_POST["heurConvocation"])));
+$dateConvocation=htmlspecialchars(trim(strip_tags($_POST["dateConvocation"])));
 
 $date_debut=htmlspecialchars(trim(strip_tags($_POST["dateDebut"])));
 $date_expiration=htmlspecialchars(trim(strip_tags($_POST["dateExpiration"])));
@@ -60,7 +61,7 @@ $aut_update9=str_replace(" ","_",$autre_9);
 $aut_update10=str_replace(" ","_",$autre_10);
 
     $sqls="UPDATE `infos_exiger_du_rv` SET `prenom`=:prenoms,`nom`=:noms,`date_de_naissance`=:date_de_naissances,`lieu_de_naissance`=:lieu_de_naissances,`genre`=:genres,`pays`=:pays,`cni`=:cni,`mail`=:mails,`heure_convocation`=:heure_convocations,
-                                         `date_debut`=:date_debuts,`date_expiration`=:date_expirations,`lieu_rv`=:lieu_rvs,`total_places`=:total_placess,
+                                         `date_convocation`=:date_convocations,`date_debut`=:date_debuts,`date_expiration`=:date_expirations,`lieu_rv`=:lieu_rvs,`total_places`=:total_placess,
                                          `autre1`=:autre_1,`autre2`=:autre_2,`autre3`=:autre_3,`autre4`=:autre_4,`autre5`=:autre_5,`autre6`=:autre_6,`autre7`=:autre_7,`autre8`=:autre_8,`autre9`=:autre_9,`autre10`=:autre_10
          WHERE `id`=:idd;";
     $requet=$db->prepare($sqls);
@@ -75,6 +76,7 @@ $aut_update10=str_replace(" ","_",$autre_10);
     $requet->bindValue(":cni",$cni);
     $requet->bindValue(":mails",$mail);
     $requet->bindValue(":heure_convocations",$heure_convocation);
+    $requet->bindParam(":date_convocations",$dateConvocation);
     $requet->bindValue(":date_debuts",$date_debut);
     $requet->bindValue(":date_expirations",$date_expiration);
     $requet->bindValue(":lieu_rvs",$lieu_rv);
@@ -119,14 +121,14 @@ $aut_update10=str_replace(" ","_",$autre_10);
         // requete pour creer une table d'utlisateur on fonction du rendez vous
         $sql3="CREATE TABLE rv_$id  (id int(11)  NOT NULL AUTO_INCREMENT,
                     code int(11) NOT NULL,
-                    _$lastPrenom varchar(100) NOT NULL,
-                    _$lastNom varchar(100) NOT NULL,
+                    _$lastPrenom varchar(255) NOT NULL,
+                    _$lastNom varchar(255) NOT NULL,
                     _$lastDateDeNaissance date NOT NULL,
-                    _$lastLieuDeNaissance varchar(100) NOT NULL,
-                    _$lastGenre varchar(25) NOT NULL,
+                    _$lastLieuDeNaissance varchar(255) NOT NULL,
+                    _$lastGenre varchar(255) NOT NULL,
                     _$lastPays varchar(50) NOT NULL,
-                    _$lastCni varchar(50) NOT NULL,
-                    _$lastMail varchar(100) NOT NULL,
+                    _$lastCni varchar(255) NOT NULL,
+                    _$lastMail varchar(255) NOT NULL,
                     $autre1 varchar(255) NOT NULL,
                     $autre2 varchar(255) NOT NULL,
                     $autre3 varchar(255) NOT NULL,

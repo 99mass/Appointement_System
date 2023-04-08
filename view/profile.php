@@ -33,8 +33,8 @@ if((empty($_SESSION['user']) && empty($_GET['id_rv_get'])) || empty($_SESSION['u
             <?php require_once("../model/profile.php")  ?>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../view/dasboard.php?id_rv_get=<?=$_GET["id_rv_get"]?>&name=<?=$_GET["name"]?>">Dasboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    <li class="breadcrumb-item"><a href="../view/dasboard.php?id_rv_get=<?=$_GET["id_rv_get"]?>&name=<?=$_GET["name"]?>">Precedent</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">actuel</li>
                 </ol>
             </nav>
             <h2 ><i class="fa-solid fa-circle-info mx-2"></i>Mes informations</h2>

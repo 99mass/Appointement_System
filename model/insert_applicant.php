@@ -62,8 +62,9 @@ $subject = "Confirmation d'inscription par $nameStruct";
 $message = "<html>
             <body >
                 <p>Bonjour,</p>
-                <p>Votre inscription a bien été prise en compte.</p>
+                <p>Felicitation votre place est maintenant garantie.</p>
                 <p>Voici votre code d'accès : <span style='background-color: #337ab7;color: #fff;font-size: larger;font-weight: bold;'>$code</span> </p>
+                <p>Veillez ne pas supprimer cette E-mail, le code vous sera demader le jour-j.</p>
                 <p>Cordialement, L'équipe $nameStruct.</p>
             </body>
             </html>";

@@ -16,6 +16,7 @@ $pays= !isset($_POST["pays"]) ? "0" : htmlspecialchars(trim(strip_tags($_POST["p
 $CNI= !isset($_POST["cni"]) ? "0" : htmlspecialchars(trim(strip_tags($_POST["cni"])));
 
 $heure_convocation=htmlspecialchars(trim(strip_tags($_POST["heurConvocations"])));
+$dateConvocation=htmlspecialchars(trim(strip_tags($_POST["dateConvocation"])));
 
 $date_debut=htmlspecialchars(trim(strip_tags($_POST["dateDebuts"])));
 $date_expiration=htmlspecialchars(trim(strip_tags($_POST["dateExpirations"])));
@@ -32,12 +33,7 @@ $autre_7=!isset($_POST["info7"]) || empty($_POST["info7"])? '' : htmlspecialchar
 $autre_8=!isset($_POST["info8"]) || empty($_POST["info8"])? '' : htmlspecialchars(trim(strip_tags($_POST["info8"])));
 $autre_9=!isset($_POST["info9"]) || empty($_POST["info9"])? '' : htmlspecialchars(trim(strip_tags($_POST["info9"])));
 $autre_10=!isset($_POST["info10"]) || empty($_POST["info10"])? '' : htmlspecialchars(trim(strip_tags($_POST["info10"])));
-// $autre11=!isset($_POST["info11"]) || empty($_POST["info11"])? '' : htmlspecialchars(trim(strip_tags($_POST["info11"])));
-// $autre12=!isset($_POST["info12"]) || empty($_POST["info12"])? '' : htmlspecialchars(trim(strip_tags($_POST["info12"])));
-// $autre13=!isset($_POST["info13"]) || empty($_POST["info13"])? '' : htmlspecialchars(trim(strip_tags($_POST["info13"])));
-// $autre14=!isset($_POST["info14"]) || empty($_POST["info14"])? '' : htmlspecialchars(trim(strip_tags($_POST["info14"])));
-// $autre15=!isset($_POST["info15"]) || empty($_POST["info15"])? '' : htmlspecialchars(trim(strip_tags($_POST["info15"])));
-// on remplace les space etre les mot cas ou l'utilisateur met des sapce entre les mots
+
 $autre1=str_replace(" ","_",$autre_1);
 $autre2=str_replace(" ","_",$autre_2);
 $autre3=str_replace(" ","_",$autre_3);
@@ -50,9 +46,9 @@ $autre9=str_replace(" ","_",$autre_9);
 $autre10=str_replace(" ","_",$autre_10);
 if (isset($_POST))  {
   
-  $sql="INSERT INTO infos_exiger_du_rv(id,id_rv,prenom,nom,date_de_naissance,lieu_de_naissance,genre,pays,cni,mail,heure_convocation,date_debut,date_expiration,lieu_rv,total_places,acces,
+  $sql="INSERT INTO infos_exiger_du_rv(id,id_rv,prenom,nom,date_de_naissance,lieu_de_naissance,genre,pays,cni,mail,heure_convocation,date_convocation,date_debut,date_expiration,lieu_rv,total_places,acces,
                                         autre1,autre2,autre3,autre4,autre5,autre6,autre7,autre8,autre9,autre10)
-          VALUES (null,:id_rvs,:prenoms,:noms,:date_de_naissances,:lieu_de_naissances,:genres,:pays,:cni,:mails,:heure_convocations,:date_debuts,:date_expirations,:lieu_rvs,:total_placess,'1',
+          VALUES (null,:id_rvs,:prenoms,:noms,:date_de_naissances,:lieu_de_naissances,:genres,:pays,:cni,:mails,:heure_convocations,:date_convocations,:date_debuts,:date_expirations,:lieu_rvs,:total_placess,'1',
                     :autre_1,:autre_2,:autre_3,:autre_4,:autre_5,:autre_6,:autre_7,:autre_8,:autre_9,:autre_10)";
     $requet=$db->prepare($sql);
 
@@ -66,6 +62,7 @@ if (isset($_POST))  {
     $requet->bindParam(":cni",$CNI);
     $requet->bindParam(":mails",$mail);
     $requet->bindParam(":heure_convocations",$heure_convocation);
+    $requet->bindParam(":date_convocations",$dateConvocation);
     
     $requet->bindParam(":date_debuts",$date_debut);
     $requet->bindParam(":date_expirations",$date_expiration);
@@ -112,14 +109,14 @@ if (isset($_POST))  {
            // fk_from_table_infos_$lastId int(11) NOT NULL,
           $sql3="CREATE TABLE rv_".$lastId." (id int(11)  NOT NULL AUTO_INCREMENT,
                     code int(11) NOT NULL,
-                    _$lastPrenom varchar(100) NOT NULL,
-                    _$lastNom varchar(100) NOT NULL,
+                    _$lastPrenom varchar(255) NOT NULL,
+                    _$lastNom varchar(255) NOT NULL,
                     _$lastDateDeNaissance date NOT NULL,
-                    _$lastLieuDeNaissance varchar(100) NOT NULL,
-                    _$lastGenre varchar(15) NOT NULL,
-                    _$lastMail varchar(100) NOT NULL,
-                    _$lastPays varchar(100) NOT NULL,
-                    _$lastCni varchar(50) NOT NULL,
+                    _$lastLieuDeNaissance varchar(255) NOT NULL,
+                    _$lastGenre varchar(255) NOT NULL,
+                    _$lastMail varchar(255) NOT NULL,
+                    _$lastPays varchar(255) NOT NULL,
+                    _$lastCni varchar(255) NOT NULL,
                     $autre1 varchar(255) NOT NULL,
                     $autre2 varchar(255) NOT NULL,
                     $autre3 varchar(255) NOT NULL,

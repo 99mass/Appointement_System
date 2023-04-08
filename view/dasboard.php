@@ -26,13 +26,20 @@
             /* width:100%; */
             box-sizing: border-box;
          }
+         #section-child1 p{
+            font-size:20px;
+            margin-left:20%;
+            text-align:left;
+         }
+         #section-child1 p span{
+            font-size:25px;
+            font-weight:bold;
+            color:darkblue;
+         }
          h3{
-            margin-top:5%;
+            margin-top:2%;
             margin-left: 16%;
          }
-        /* #containers{
-            display:block;
-        } */
         .main .section{
             position: relative;
             top:0;
@@ -51,10 +58,13 @@
             #div_table{
             overflow-x: hidden;
             }
+            #section-child1 p{
+            width:58%;
+         }
         }
         @media screen and (max-width : 769px) {
             #div_table{
-            margin: 0% 0%;
+            margin: 0% 1%;
             border:none;
             width:38rem;
             box-sizing: border-box;
@@ -63,8 +73,12 @@
          #div_table table th{
             font-size: 1rem;
          }
+         #section-child1 p{
+            margin-top:-95%;
+            margin-left: 4%;
+            width:38rem;
+         }
          h3{
-            margin-top:-90%;
             margin-left: 16%;
          }
         .main .section .grid-max #section-child1{
@@ -82,6 +96,11 @@
             width:38rem;
             overflow-x: scroll;
             }
+            #section-child1 p{
+            margin-top:-95%;
+            margin-left: 4%;
+            width:38rem;
+         }
             h3{
             margin-left: 0%;
          }
@@ -94,6 +113,8 @@
         }
     </style>
     <?php }?>
+    <!-- CSS DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 </head>
     <body>
         <div class="main">
@@ -104,7 +125,15 @@
                 
 
                     <div id="section-child1" class="g-col-6 mt-4">
-                        <h3 ><i class="fa-sharp fa-solid fa-list mx-2"></i>listes rendez-vous <?= empty($_GET['mess']) ? '' : $_GET['name'] ?> </h3>
+                    <?php if(empty($_SESSION['user'])){?>
+                            <p >
+                                Bienvenu sur le Portail de <span> <?= empty($_GET['name']) ? '' : $_GET['name'] ?></span>. <br>
+                                vous y êtes presque,Veillez Choisir la date qui vous arrange parmi la liste ci-dessous en cliquant sur l'icône <i class="fa-solid fa-arrow-up-right-from-square p-1 fs-5 text-primary"></i>. <br>
+                                Vous allez par la suite rediriger vers le formulaire ou nous allons vous demandez certains infromations.
+                            </p>
+                    <?php }?>
+                        <h3 ><i class="fa-sharp fa-solid fa-list mx-2 mt-1"></i>listes rendez-vous <?= empty($_GET['mess']) ? '' : $_GET['name'] ?> </h3>
+                     
                         <div class="conten-rv">
                         <?php if(!empty($_SESSION['user'])){?>
                                 <p id="menu_avant_liste_rv" class="cacher_appli" >
@@ -120,23 +149,31 @@
                                     require_once ("../view/include/forms_create_rv.php");
                                     require_once ("../view/include/form_update_rv.php"); 
                                      require_once ("../view/include/form_delete_rv.php"); 
-                                  
+                                     require_once "../model/read_rv.php";
                                 ?>
                                 <div id="div_table" >
                                 <!-- debut listes rendez vous creer -->
-                                <table class="table table-hover ">
+                                <?php if(!empty($_SESSION['user']) && count($liste_rv)>1){?>
+                                    <table id="example" class="table table-hover ">
+                                <?php }else{?> 
+                                    <table class="table table-hover ">
+                                <?php }?> 
                                     <thead >
                                     <th>#</th>
                                     <th>Date-Debut</th>
                                     <th>Date-Exp</th>
                                     <th>Heure</th>
+                                    <th>Date convocation</th>
                                     <th>Lieu</th>
-                                    <th class="cacher_applicant">Total place</th>
+                                    <th class="cacher_applicant">Total place</th>                                    
                                     <th  class="cacher_applicant">Place prises</th>
+                                  
                                     <th>Place restantes</th> 
                                     <th colspan="1" class="cacher_applicant">Action</th>
                                     <th class="cacher_applicant" >Accessible</th>
+                                    <?php if(empty($_SESSION['user'])){?>
                                     <th colspan="2" class="info_applicant" >Choisir</th>
+                                    <?php }?>
                                     </thead>
                                <?php                                      
                                     // require_once "../model/read_rv.php";
@@ -154,17 +191,18 @@
                                             $place_restant=$colonne["total_places"]-$places_prises ;
                                             if(!empty($_SESSION['user'])){   
                                 ?>
-                                
+                                     <?php if(!empty($_SESSION['user'])){?>
                                         <tr> 
                                             <td><?= $numero++ ?></td>
                                             <td><?= $colonne["date_debuts"]?></td>
                                             <td><?= $colonne["date_expirations"]?></td>
                                             <td><?= $colonne["heure_convocations"]?></td>
+                                            <td><?= $colonne["dateConvocation"]?></td>
                                             <td><?= $colonne["lieu_rv"]?></td>
                                             <td class="cacher_applicant"><?= $colonne["total_places"]?></td>
                                             <td class="cacher_applicant"><?=  $places_prises; ?> </td>
                                             <td><?=  $place_restant; ?></td> 
-                                            <?php if(!empty($_SESSION['user'])){?>
+                                           
                                             <td colspan="1" class="cacher_applicant" style="display: flex;padding-bottom: 0.6em;">
                                                 <button type="button" class="btn btn-primary me-1 cacher_applicant" data-bs-toggle="modal" data-bs-target="#formulair_modification<?= $colonne["id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Modifier rendez-vous"  ><i class="fa-regular fa-pen-to-square"></i></button>
                                                 <button type="button" class="btn btn-danger me-1 cacher_applicant " data-bs-toggle="modal" data-bs-target="#delete_formulair<?= $colonne["id"]?>" data-toggle="tooltip" data-placement="bottom" title="Supprimer rendez-vous"  ><i class="fa-solid fa-trash"></i></button>
@@ -189,56 +227,34 @@
                                                      <button type="submit" class="btn btn-primary">valider</button>
                                                      </form>
                                             </td> 
-                                            <td  class="info_applicant"> 
-                                                <button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#rv<?= $colonne["id"]?>" data-toggle="tooltip" data-placement="bottom" title="reserver">
-                                                     <i class="fa-solid fa-check text-white bg-primary p-1 rounded-circle fs-5" ></i>
-                                                </button>
-                                            </td>
                                         </tr>
                                     <?php }else{
                                         //  ici on gere le cas ou le rendez est definit comme visible par l'entreprise si il doit etre afficher 
                                          if($colonne["acces"]!=0){
-                                            if($place_restant !=0){
+                                            if($place_restant !=0 ){
+                                                if($colonne["dateConvocation"] != date("d-m-Y")){
                                     ?>
-                                        <tr> 
-                                            <td><?= $numero++ ?></td>
+                                    
+                                        <tr>                             
+                                            <td> <?= $numero++ ?> </td>
                                             <td><?= $colonne["date_debuts"]?></td>
                                             <td><?= $colonne["date_expirations"]?></td>
                                             <td><?= $colonne["heure_convocations"]?></td>
+                                            <td><?= $colonne["dateConvocation"]?></td>
                                             <td><?= $colonne["lieu_rv"]?></td>
-                                            <td class="cacher_applicant"><?= $colonne["total_places"]?></td>
-                                            <td class="cacher_applicant">---</td>
                                             <td><?=  $place_restant; ?></td> 
-                                            <?php if(!empty($_SESSION['user'])){?>
-                                         
-                                            <?php }?>
-                                            <td colspan="5" class="cacher_applicant" >
-                                                 <form action="../model/update_visiblity.php" method="post"  id="accessible">
-                                                   <select name="choix" class="custom-select">
-                                                        <?php if($colonne["acces"]==1){ ?>
-                                                             <option value="1" selected >Oui</option>
-                                                        <?php  }else{ ?>
-                                                              <option value="1"  >Oui</option>
-                                                         <?php  } ?> 
-                                                        <?php  if($colonne["acces"]==0){ ?>
-                                                            <option value="0" selected>Non</option>
-                                                        <?php  }else{ ?>
-                                                            <option value="0" >Non</option>  
-                                                          <?php  } ?>                         
-                                                    </select>
-                                                    <input type="hidden" name="rv_id" value="<?=$colonne["id"] ?>" />
-                                                     <button type="submit" class="btn btn-primary">valider</button>
-                                                     </form>
-                                            </td> 
+                                             
                                             <td  class="info_applicant"> 
-                                               <a href="../view/form.php?id_rv_get=<?= $_GET["id_rv_get"]?>&rv=<?= $colonne['id']?>&name=<?= $_GET['name'];?>" onclick="displayForm(<?= $colonne['id']?>)">
+                                                <a href="../view/form.php?id_rv_get=<?= $_GET["id_rv_get"]?>&rv=<?= $colonne['id']?>&name=<?= $_GET['name'];?>">
                                                     <button type="button" class="btn" data-bs-toggle="modal"  data-toggle="tooltip" data-placement="bottom" title="reserver">
-                                                        <i class="fa-solid fa-check text-white bg-primary p-1 rounded-circle fs-5" ></i>
+                                                        <i class="fa-solid fa-arrow-up-right-from-square p-1 fs-5 text-primary"></i>
                                                     </button>
-                                                </a> 
+                                                </a>
                                             </td>
+                                           
                                         </tr>
-                                <?php } } }  } }  }   } ?>
+                                   
+                                <?php }} } }  } }  }   } ?>
 
                                     </table>
                             </div>
@@ -298,5 +314,14 @@
 
         <!-- Include Cdn js -->
         <?php require_once ("../view/include/linkScripts.php") ?>
+
+
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     </body>
 </html>

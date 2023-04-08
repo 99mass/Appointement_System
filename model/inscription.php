@@ -47,13 +47,11 @@ if (isset($nom_entreprise_or_utilisaterur) && isset($domaine) && isset($pays)  &
                     "pays"=>$pays,
                     "email"=>$mail
                 ];
-                $sessionId=$_SESSION['user']['id'];
-                $nom_=$_SESSION['user']['nom_entreprise_ou_user'];
-                if (condition) {
-                    # code...
-                }
+                // $sessionId=$_SESSION['user']['id'];
+                // $nom_=$_SESSION['user']['nom_entreprise_ou_user'];
+               
                 // si le compte exite on le redirie vers sa page de profile
-                header("Location: ../view/dasboard.php?id_rv_get=".$sessionId."&name=".$nom_);
+                header("Location: ../view/dasboard.php?id_rv_get=".$id."&name=".$nom_entreprise_or_utilisaterur);
             }
         }
      }

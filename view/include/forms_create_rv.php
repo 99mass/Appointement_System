@@ -94,6 +94,10 @@
                                                     <span class="input-group-text" id="basic-addon1">Heure convocation</span>
                                                     <input type="time" name="heurConvocations" class="form-control"  aria-describedby="basic-addon1">
                                                  </div>
+                                                 <div class="input-group mt-1 ">
+                                                    <span class="input-group-text" id="basic-addon1">Date convocation</span>
+                                                    <input type="date" name="dateConvocation" class="form-control pe-2"  aria-describedby="basic-addon1">
+                                                 </div>
 
                                         </div>
                                     </div>

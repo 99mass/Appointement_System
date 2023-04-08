@@ -18,7 +18,7 @@ $columns = $requet->fetchAll(PDO::FETCH_COLUMN);
  
 
 if(count($listes)> 0){ 
-    $delimiter = ","; 
+    $delimiter = ";"; 
     $filename = "liste_" . date('Y-m-d') . ".csv"; 
      
     // Create a file pointer 
@@ -46,8 +46,7 @@ if(count($listes)> 0){
     fseek($f, 0); 
      
     header('Content-Type: text/csv'); 
-    header('Content-Disposition: attachment; filename="' . $filename . '";'); 
-      
+    header("Content-Disposition: attachment; filename=$filename"); 
     fpassthru($f); 
 } 
 exit; 

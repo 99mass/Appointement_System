@@ -16,14 +16,20 @@ if (isset($newPassword) ) {
     $requet->bindValue(":mail",$mail);
     $requet->bindValue(":mot_de_passes",$newPassword_hashed);
     if ($requet->execute()) {
+        $sql1="SELECT * FROM `client` WHERE `email`=:mail;";
+        $req=$db->prepare($sql1);
+        $req->bindValue(":mail",$mail);
+        $req->execute();
+        $result= $req->fetch(PDO::FETCH_ASSOC);
+
          $_SESSION['success']="Mot de passe Modfier ";
          // il reste sur sa page de profile
-           header("Location: ../view/dasboard.php?id_rv_get=$sessionId&name=$nom_entreprise_ou_user");
+           header("Location: ../view/dasboard.php?id_rv_get=".$result['id']."&name=".$result['nom_entreprise_ou_user']."");
         
     }else {
         $_SESSION['erreur3']="Veillez réessayez une erreure c'est produit!";
      
-        header("Location: ../view/dasboard.php?id_rv_get=$sessionId&name=$nom_entreprise_ou_user");
+        header("Location: ../view/dasboard.php?id_rv_get=".$result['id']."&name=".$result['nom_entreprise_ou_user']."");
         
     }
     

@@ -321,6 +321,10 @@ margin-bottom: 1rem;
                                     <span class="input-group-text" id="basic-addon1">Heure convocation</span>
                                     <input type="time" class="form-control" name="heurConvocation" value="<?= $Onrv['heure_convocation'] ?>" aria-label="heure_convocation" aria-describedby="basic-addon1">
                                 </div>
+                                <div class="input-group mt-2">
+                                    <span class="input-group-text" id="basic-addon1">Date convocation</span>
+                                    <input type="date" class="form-control" name="dateConvocation" value="<?= $Onrv['date_convocation'] ?>" aria-label="heure_convocation" aria-describedby="basic-addon1">
+                                </div>
                                </div>
                             </div>
                             <div class="form_2">
