@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/style.css">
+    <link rel="stylesheet" href="../view/css/styles.css">
     <!--Includes Cdn Css -->
     <?php require_once ("../view/include/links.php") ?>
     <title>Appointment-System</title>
@@ -29,7 +29,7 @@
         <img src="../view/image/backgroung.jpg" alt="backgroud" >
       </div>
       
-      <div id="petite_annoc" class="petite_annoc">
+      <div id="petite_annoc" class="petite_annoc ">
         Bienvenu dans Appointment system <br> votre platforme de gestion de rendez vous rapide et securiser
        <div>c'est votre première fois ici ? <br>cliquez sur le bouton s'inscrire</div> 
            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">S'inscrire</button>
@@ -86,6 +86,31 @@
     <script src="/view/js/index.js"></script>
     <!-- Include Cdn js -->
     <?php require_once ("../view/include/linkScripts.php") ?>
+
+
+<script>
+    // let monElement = document.getElementById("petite_annoc");
+    
+    // if (window.innerWidth >= 1440) { 
+    //   monElement.style.position = "relative"; // Définit la position comme relative
+    //   monElement.style.top = "-60rem"; // Déplace l'élément de 50 pixels vers le bas
+    //   monElement.style.left = "45rem"
+    //   setTimeout(function() {
+    //     monElement.style.position = "relative"; 
+    //   monElement.style.top = "-40rem"; 
+    //     monElement.style.fontSize =" 1.5rem"
+    // }, 300);
+    // }else if (window.innerWidth<= 1025 && window.innerWidth> 768){
+    //   monElement.style.position = "relative"; // Définit la position comme relative
+    //   monElement.style.top = "-65rem"; // Déplace l'élément de 50 pixels vers le bas
+    //   monElement.style.left = "45%"
+    //   setTimeout(function() {
+    //     monElement.style.position = "relative"; 
+    //   monElement.style.top = "-25rem"; 
+    //   monElement.style.left = "45%"; 
+    // }, 300);
+    }
+</script>
 
   </body>
 </html>
